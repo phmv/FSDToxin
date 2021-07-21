@@ -5,8 +5,8 @@ import './carousel.scss'
     let $this = $(this)
     let gallery = $this.children('.carousel__gallery')
     let images = gallery.children('.carousel__image')
-
-    images.eq(0).addClass('carousel__image--active')
+    let currentIndex = 0;
+    let nextIndex = null;
 
     if (images.length > 1) {
       $this
@@ -29,31 +29,43 @@ import './carousel.scss'
       $this.on('click', '.carousel__arrow', function(e) {
         e.preventDefault()
         let arrow = $(this)
-        let activeImage = $this.find('.carousel__image--active')
-        let currentIndex = activeImage.index()
-        let nextIndex;
-
         let left = false;
+        let cycle = false;
+        currentIndex = nextIndex !==null ? nextIndex : currentIndex;
 
         if (arrow.hasClass('carousel__arrow--left')) {
-          nextIndex = currentIndex - 1 >= 0 ? currentIndex - 1 : images.length - 1
+          nextIndex = currentIndex - 1 >= 0 ? currentIndex - 1 : images.length - 1;
           left = true;
+          cycle = currentIndex === 0
         } else {
           nextIndex = (currentIndex + 1) % images.length
+          cycle = currentIndex === images.length - 1
         }
 
-        images
-          .eq(nextIndex)
-          .addClass(`carousel__image--slide-from-${left ? 'left' : 'right'} carousel__image--active`)
+        if (cycle) {
+          gallery.css('transition' , 'none')
 
-        activeImage
-          .addClass(`carousel__image--slide-${left ? 'left' : 'right'}`)
-          .removeClass('carousel__image--active')
+          let clonedItem = images.eq(nextIndex).clone()
 
-        activeImage.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
-          activeImage.removeClass(`carousel__image--slide-${left ? 'left' : 'right'}`)
-          images.eq(nextIndex).removeClass(`carousel__image--slide-from-${left ? 'left' : 'right'}`)
-        })
+          if (left) {
+
+            gallery.prepend(clonedItem)
+            gallery.css('transform', `translateX(-100%)`)
+            setTimeout(() => {
+              gallery.css('transition' , '')
+              gallery.css('transform', ``)
+            }, 0)
+          } else {
+            gallery.append(clonedItem)
+            gallery.css('transform', `translateX(-100%)`)
+            gallery.css('transition' , '')
+            gallery.css('transform', ``)
+          }
+        }
+
+        // gallery.css('transform', `translateX(-${nextIndex * 100}%)`)
+
+
 
         dots.find('.carousel__dot--active').removeClass('carousel__dot--active')
         dots.children('.carousel__dot')
