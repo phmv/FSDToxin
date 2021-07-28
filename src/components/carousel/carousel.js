@@ -1,78 +1,96 @@
-import './carousel.scss'
+import "./carousel.scss";
 
-(function() {
-    $('.carousel').each(function() {
-    let $this = $(this)
-    let gallery = $this.children('.carousel__gallery')
-    let images = gallery.children('.carousel__image')
+(function () {
+  $(".carousel").each(function () {
+    const $this = $(this);
+    const gallery = $this.children(".carousel__gallery");
+    const images = gallery.children(".carousel__image");
+    const firstImage = images.eq(0);
+    const lastImage = images.eq(images.length - 1);
+    const transitionEvent = "transitionend webkitTransitionEnd oTransitionEnd";
     let currentIndex = 0;
     let nextIndex = null;
 
-    if (images.length > 1) {
-      $this
-        .prepend('<a href="#" class="carousel__arrow carousel__arrow--right"></a>')
-        .append('<div class="carousel__dots"></div>')
-        .append('<a href="#" class="carousel__arrow carousel__arrow--left"></a>')
+    if (images.length === 1) return;
 
-      let dots = $this.children('.carousel__dots')
+    $this
+      .prepend(
+        '<a href="#" class="carousel__arrow carousel__arrow--right"></a>'
+      )
+      .append('<div class="carousel__dots"></div>')
+      .append('<a href="#" class="carousel__arrow carousel__arrow--left"></a>');
 
-      images.each(i => {
-        if (!i) {
-          dots.append('<div class="carousel__dot carousel__dot--active"></div>')
-        }
-        else {
-          dots.append('<div class="carousel__dot"></div>')
-        }
-      })
+    let dots = $this.children(".carousel__dots");
 
+    images.each((i, img) => {
+      $(img).css("left", `${i * 100}%`);
+      if (!i) {
+        dots.append('<div class="carousel__dot carousel__dot--active"></div>');
+      } else {
+        dots.append('<div class="carousel__dot"></div>');
+      }
+    });
 
-      $this.on('click', '.carousel__arrow', function(e) {
-        e.preventDefault()
-        let arrow = $(this)
-        let left = false;
-        let cycle = false;
-        currentIndex = nextIndex !==null ? nextIndex : currentIndex;
+    $this.on("click", ".carousel__arrow", function (e) {
+      e.preventDefault();
+    });
+    $this.on("click", ".carousel__arrow", arrowClick);
 
-        if (arrow.hasClass('carousel__arrow--left')) {
-          nextIndex = currentIndex - 1 >= 0 ? currentIndex - 1 : images.length - 1;
-          left = true;
-          cycle = currentIndex === 0
+    function arrowClick() {
+      let arrow = $(this);
+      let left = false;
+      currentIndex = nextIndex !== null ? nextIndex : currentIndex;
+      gallery.css("transition", "");
+
+      if (arrow.hasClass("carousel__arrow--left")) {
+        nextIndex =
+          currentIndex - 1 >= 0 ? currentIndex - 1 : images.length - 1;
+        left = true;
+      } else {
+        nextIndex = (currentIndex + 1) % images.length;
+      }
+
+      if (isCycle()) {
+        $this.off("click", ".carousel__arrow", arrowClick);
+        gallery.on(transitionEvent, setInitialState);
+        if (left) {
+          lastImage.css("left", "-100%");
+          gallery.css("transform", "translate3d(100%, 0, 0)");
         } else {
-          nextIndex = (currentIndex + 1) % images.length
-          cycle = currentIndex === images.length - 1
+          firstImage.css("left", `${images.length * 100}%`);
+          gallery.css(
+            "transform",
+            `translate3d(-${images.length * 100}%, 0, 0)`
+          );
         }
+      } else {
+        gallery.css("transform", `translate3d(-${nextIndex * 100}%, 0, 0)`);
+      }
 
-        if (cycle) {
-          gallery.css('transition' , 'none')
+      dots.find(".carousel__dot--active").removeClass("carousel__dot--active");
+      dots
+        .children(".carousel__dot")
+        .eq(nextIndex)
+        .addClass("carousel__dot--active");
 
-          let clonedItem = images.eq(nextIndex).clone()
+      function isCycle() {
+        return (
+          (currentIndex === 0 && nextIndex !== 1) ||
+          (currentIndex === images.length - 1 && nextIndex === 0)
+        );
+      }
 
-          if (left) {
-
-            gallery.prepend(clonedItem)
-            gallery.css('transform', `translateX(-100%)`)
-            setTimeout(() => {
-              gallery.css('transition' , '')
-              gallery.css('transform', ``)
-            }, 0)
-          } else {
-            gallery.append(clonedItem)
-            gallery.css('transform', `translateX(-100%)`)
-            gallery.css('transition' , '')
-            gallery.css('transform', ``)
-          }
-        }
-
-        // gallery.css('transform', `translateX(-${nextIndex * 100}%)`)
-
-
-
-        dots.find('.carousel__dot--active').removeClass('carousel__dot--active')
-        dots.children('.carousel__dot')
-          .eq(nextIndex)
-          .addClass('carousel__dot--active')
-
-      })
+      function setInitialState() {
+        gallery.css("transition", "none");
+        gallery.css(
+          "transform",
+          `translate3d(${left ? -(images.length - 1) * 100 : 0}%, 0, 0)`
+        );
+        firstImage.css("left", `0%`);
+        lastImage.css("left", `${(images.length - 1) * 100}%`);
+        gallery.off(transitionEvent, setInitialState);
+        $this.on("click", ".carousel__arrow", arrowClick);
+      }
     }
-  })
+  });
 })();
