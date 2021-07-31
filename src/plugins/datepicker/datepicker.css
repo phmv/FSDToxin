@@ -214,6 +214,7 @@
     transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
     transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease; }
 
+
 .datepicker-inline {
   max-width: 32rem;
   width: 100%;
@@ -224,8 +225,8 @@
   /* border-color: #d7d7d7; */
   /* box-shadow: none; */
   position: relative;
-  left: auto;
-  right: auto;
+  left: 0;
+  margin: 0;
   opacity: 1;
   -webkit-transform: none;
           transform: none; }
