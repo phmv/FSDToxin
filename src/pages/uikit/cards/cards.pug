@@ -7,10 +7,21 @@ block variables
   - var darkBg = true;
 
 block main
-  include ../../../forms/sch-room-form/sch-room-form
-  include ../../../forms/sign-up-form/sign-up-form
-  include ../../../forms/sign-in-form/sign-in-form
-  include ../../../forms/room-booking-card/room-booking-card
-  .datepicker-here
-  +room-card({roomNumber: '888', images: [require('../../../assets/img/room888.png'), require('../../../assets/img/room840.png'), require('../../../assets/img/room888.png'), require('../../../assets/img/room840.png')],  type: 'люкс', price: '9&nbsp;990', rating: 5, reviewsNumber: '145'})
-  +room-card({roomNumber: '840', images: [require('../../../assets/img/room840.png')], price: '9&nbsp;900', rating: 4, reviewsNumber: '65'})
+  .cards
+    .cards__group
+      .cards__card
+        include ../../../forms/sch-room-form/sch-room-form
+      .cards__card
+        include ../../../forms/sign-up-form/sign-up-form
+    .cards__group
+      .cards__card
+        include ../../../forms/room-booking-card/room-booking-card
+      .cards__card
+        include ../../../forms/sign-in-form/sign-in-form
+    .cards__group
+      .cards__card.cards__card--lastgroup
+        .datepicker-here
+      .cards__card.cards__card--lastgroup
+        +room-card({roomNumber: '888', images: [require('../../../assets/img/room888.png'), require('../../../assets/img/room840.png'), require('../../../assets/img/room888.png'), require('../../../assets/img/room840.png')],  type: 'люкс', price: '9&nbsp;990', rating: 5, reviewsNumber: '145'})
+      .cards__card.cards__card--lastgroup
+        +room-card({roomNumber: '840', images: [require('../../../assets/img/room840.png')], price: '9&nbsp;900', rating: 4, reviewsNumber: '65'})
