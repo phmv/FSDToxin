@@ -1,0 +1,10 @@
+.toxin-logo {
+  display: flex;
+  align-items: center;
+  &__text {
+    width: 5.4rem;
+    height: 1.4rem;
+    margin-left: 1.25rem;
+    fill: #1f2041;
+  }
+}
