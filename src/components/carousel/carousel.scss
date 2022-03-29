@@ -13,7 +13,8 @@
   &__arrow {
     position: absolute;
     z-index: 1;
-    top: 0; bottom: 0;
+    top: 0;
+    bottom: 0;
     width: 4.2rem;
     display: flex;
     justify-content: center;
@@ -24,17 +25,17 @@
     transition: all 0.2s ease-out;
 
     &::before {
-      content: 'expand_more';
+      content: "expand_more";
       font-size: 2.4rem;
       line-height: 2.4rem;
-      font-family: 'Material Icons';
+      font-family: "Material Icons";
     }
 
     &--left {
       left: 0;
       background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
       &::before {
-        transform: rotate(90deg)
+        transform: rotate(90deg);
       }
     }
 
@@ -42,8 +43,12 @@
       right: 0;
       background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
       &::before {
-        transform: rotate(-90deg)
+        transform: rotate(-90deg);
       }
+    }
+
+    @media screen and (max-width: 768px) {
+      opacity: 1;
     }
   }
 
@@ -67,7 +72,6 @@
       height: 100%;
       object-fit: cover;
     }
-
   }
 
   &__dots {
