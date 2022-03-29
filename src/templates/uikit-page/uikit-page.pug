@@ -5,7 +5,8 @@ block variables
 - var classes = ['uikit-page']
 if (darkBg)
   - classes.push('uikit-page--dark-bg')
-
+if (noPaddings)
+  - classes.push('uikit-page--width-no-paddings')
 doctype html
 html(lang='en')
   head

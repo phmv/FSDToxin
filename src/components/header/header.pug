@@ -1,0 +1,34 @@
+include ../toxin-logo/toxin-logo
+include ../nav-menu/nav-menu
+include ../link-button/link-button
+//- Using example:
+
+mixin header(params)
+  //- - let imageurl = './theimage.png'
+  .header
+    .header__content
+      .header__logo
+        +toxin-logo()
+      //- img.header__image(src=require('' + imageurl))
+      .header__menu
+        +nav-menu([
+          {title: 'О нас', isImportant: true, link: 'https://fsd.net/aboutus'},
+          {title: 'Услуги', subitems: [
+            {title: 'Услуга 1', link: 'https://fsd.net/service1'},
+            {title: 'Услуга 2', link: 'https://fsd.net/service2'},
+            {title: 'Услуга 3', link: 'https://fsd.net/service3'}
+          ]},
+          {title: 'Вакансии', link: 'https://fsd.net/job'},
+          {title: 'Новости', link: 'https://fsd.net/news'},
+          {title: 'Соглашения', subitems: [
+            {title: 'Соглашение 1', link: 'https://fsd.net/agreement1'},
+            {title: 'Соглашение 2', link: 'https://fsd.net/agreement2'},
+            {title: 'Соглашение 3', link: 'https://fsd.net/agreement3'}
+          ]}
+          ])
+      .header__authorization
+        .header__login-button
+          +link-button({text: 'Войти', linkTo: 'somelink', theme: 'secondary', headerButton: true})
+        .header__sign-in-button
+          +link-button({text: 'Зарегистрироваться', linkTo: 'somelink', theme: 'primary', headerButton: true})
+      .header__profile

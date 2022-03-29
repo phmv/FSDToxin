@@ -1,17 +1,22 @@
 .uikit-page {
   margin: auto 0;
-  &--dark-bg {
-    background-color: #F4F4F6;
-  }
 
   &__logo {
-    position:absolute;
+    position: absolute;
     top: 3rem;
     left: 3rem;
   }
 
   &__main {
     padding: 13rem 2rem;
+  }
+
+  &--dark-bg {
+    background-color: #f4f4f6;
+  }
+
+  &--width-no-paddings &__main {
+    padding: 13rem 0;
   }
 
   @media (max-width: 440px) {

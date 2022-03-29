@@ -1,0 +1,10 @@
+extends ../../../templates/uikit-page/uikit-page
+include ../../../components/header/header
+
+block variables
+  - var title = 'Headers and Footers';
+  - var darkBg = true;
+  - var noPaddings = true;
+block main
+  .headers-and-footers
+    +header()

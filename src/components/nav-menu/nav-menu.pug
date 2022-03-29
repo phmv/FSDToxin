@@ -1,0 +1,19 @@
+//- Using example:
+
+mixin nav-menu(items)
+  nav.nav-menu
+    ul.nav-menu__list
+      each item in items
+        - var itemClassList = ['nav-menu__item']
+        if item.isImportant
+          - itemClassList.push('nav-menu__item--important')
+        li(class=itemClassList)
+          if item.subitems
+            .nav-menu__dropdown
+              .nav-menu__dropdown-title!=item.title
+              ul.nav-menu__dropdown-list
+                each subitem in item.subitems
+                  li.nav-menu__dropdown-item
+                    a.nav-menu__link.nav-menu__dropdown-link(href=subitem.link)!= subitem.title
+          else
+            a.nav-menu__link(href=item.link)!= item.title

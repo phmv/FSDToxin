@@ -1,0 +1,60 @@
+.nav-menu {
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__list,
+  &__dropdown-list {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  &__item {
+    vertical-align: middle;
+    margin-right: 2rem;
+  }
+
+  &__item--important {
+    font-weight: bold;
+    color: rgba(#1f2041, 0.75);
+  }
+
+  &__dropdown-title {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-right: 2.4rem;
+    line-height: 1.8rem;
+  }
+
+  &__dropdown-title::after {
+    position: absolute;
+    width: 2.4rem;
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-size: 2.4rem;
+    line-height: 2.1rem;
+    color: rgba(31, 32, 65, 0.5);
+    content: "\e5cf";
+  }
+
+  &__dropdown-list {
+    display: none;
+    position: absolute;
+  }
+
+  &__dropdown-title,
+  &__link,
+  &__link:hover,
+  &__link:focus,
+  &__link:active,
+  &__link:visited {
+    color: rgba(#1f2041, 0.5);
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
