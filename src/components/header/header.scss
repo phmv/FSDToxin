@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   width: 100%;
   box-sizing: border-box;
   padding: 1.5rem 2rem;
@@ -18,10 +19,87 @@
   }
 
   &__authorization {
+    @media screen and (max-width: 1024px) {
+      display: none;
+      max-width: 28rem;
+      box-sizing: border-box;
+      position: absolute;
+      background-color: #ffffff;
+      padding: 1rem;
+      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    }
+
+    &--opened {
+      @media screen and (max-width: 1024px) {
+        display: block;
+      }
+    }
+  }
+
+  &__signing-buttons {
     display: flex;
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__login-button {
     margin-right: 2rem;
+    @media screen and (max-width: 1024px) {
+      margin: auto;
+    }
+  }
+
+  &__profile {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 2rem;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 3rem;
+      border-left: 1px solid rgba(31, 32, 65, 0.1);
+      left: 0;
+    }
+  }
+
+  &__username {
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &--with-user-loged &__profile {
+    display: flex;
+  }
+
+  &--with-user-loged &__signing-buttons {
+    display: none;
+  }
+
+  &__profile-button {
+    display: none;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+
+    .material-icons {
+      font-size: 36px;
+      color: #bc9cff;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      background: -moz-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      -moz-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media screen and (max-width: 1024px) {
+      display: flex;
+    }
   }
 }

@@ -7,4 +7,7 @@ block variables
   - var noPaddings = true;
 block main
   .headers-and-footers
-    +header()
+    .headers-and-footers__item
+      +header()
+    .headers-and-footers__item
+      +header({isUserLoged: true})

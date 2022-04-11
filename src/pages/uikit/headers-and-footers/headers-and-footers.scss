@@ -1,3 +1,11 @@
 .headers-and-footers {
   margin-top: 1rem;
+
+  &__item {
+    margin-top: 4rem;
+  }
+
+  &__item:nth-child(1) {
+    margin-top: 0;
+  }
 }

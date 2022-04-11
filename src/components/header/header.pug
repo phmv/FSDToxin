@@ -4,12 +4,14 @@ include ../link-button/link-button
 //- Using example:
 
 mixin header(params)
-  //- - let imageurl = './theimage.png'
-  .header
+  - var userLogedClass = ''
+  if params
+    if params.isUserLoged
+      - userLogedClass = 'header--with-user-loged'
+  .header(class=userLogedClass)
     .header__content
       .header__logo
         +toxin-logo()
-      //- img.header__image(src=require('' + imageurl))
       .header__menu
         +nav-menu([
           {title: 'О нас', isImportant: true, link: 'https://fsd.net/aboutus'},
@@ -27,8 +29,12 @@ mixin header(params)
           ]}
           ])
       .header__authorization
-        .header__login-button
-          +link-button({text: 'Войти', linkTo: 'somelink', theme: 'secondary', headerButton: true})
-        .header__sign-in-button
-          +link-button({text: 'Зарегистрироваться', linkTo: 'somelink', theme: 'primary', headerButton: true})
-      .header__profile
+        .header__signing-buttons
+          .header__login-button
+            +link-button({text: 'Войти', linkTo: 'somelink', theme: 'secondary', headerButton: true})
+          .header__sign-up-button
+            +link-button({text: 'Зарегистрироваться', linkTo: 'somelink', theme: 'primary', headerButton: true})
+        .header__profile
+          .header__username Константин Константинопольский
+      button.header__profile-button(title='User Menu')
+          span.material-icons person_outline

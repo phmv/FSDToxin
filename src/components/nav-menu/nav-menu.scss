@@ -13,7 +13,16 @@
 
   &__item {
     vertical-align: middle;
-    margin-right: 2rem;
+    padding: 0 1rem;
+    user-select: none;
+  }
+
+  &__dropdown {
+    position: relative;
+
+    &:hover &-list {
+      display: block;
+    }
   }
 
   &__item--important {
@@ -43,6 +52,17 @@
   &__dropdown-list {
     display: none;
     position: absolute;
+    left: -1rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: calc(100% + 2rem);
+    padding: 1rem;
+    z-index: 1;
+    box-shadow: 0px 5px 10px -5px rgba(31, 32, 65, 0.1);
+
+    &--active {
+      display: block;
+    }
   }
 
   &__dropdown-title,
