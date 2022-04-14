@@ -17,3 +17,7 @@ mixin nav-menu(items)
                     a.nav-menu__link.nav-menu__dropdown-link(href=subitem.link)!= subitem.title
           else
             a.nav-menu__link(href=item.link)!= item.title
+    .nav-menu__burger
+      .nav-menu__burger-line.nav-menu__burger-line--first
+      .nav-menu__burger-line.nav-menu__burger-line--second
+      .nav-menu__burger-line.nav-menu__burger-line--third
