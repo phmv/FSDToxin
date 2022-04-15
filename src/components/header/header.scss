@@ -1,5 +1,6 @@
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 100%;
   box-sizing: border-box;
   padding: 1.5rem 2rem;
@@ -80,6 +81,10 @@
 
   &__username {
     color: rgba(31, 32, 65, 0.5);
+  }
+
+  &--for-uikit {
+    position: relative;
   }
 
   &--with-user-loged &__profile {

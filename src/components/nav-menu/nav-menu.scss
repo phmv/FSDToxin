@@ -108,12 +108,16 @@
     opacity: 0;
     border-radius: 0 0 4px 4px;
     box-shadow: 0px 5px 10px -5px rgba(31, 32, 65, 0.1);
-    transition: all 0.1s ease-in;
+    transition: opacity 0.1s ease-in, visibility 0.1s ease-in;
 
     &--opened {
       visibility: visible;
       opacity: 1;
-      right: -1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      left: calc(-100% - 1rem);
       top: 0;
       border-radius: 4px;
       box-shadow: 0 5px 10px 5px rgba(31, 32, 65, 0.05);

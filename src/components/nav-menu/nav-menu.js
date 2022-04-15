@@ -23,11 +23,19 @@ document.querySelectorAll(".nav-menu").forEach((navMenu) => {
 
     let navMenuDropdownListOpenedClass = "nav-menu__dropdown-list--opened";
 
+    let openedDropdownList;
+
     dropdown.addEventListener("click", dropdownClickEventHandler);
-    // document.addEventListener("click", outOfNavMenuDropdownClickHandler);
+    document.addEventListener("click", outOfNavMenuDropdownClickHandler);
 
     function dropdownClickEventHandler(e) {
       navMenuDropdownList.classList.toggle(navMenuDropdownListOpenedClass);
+    }
+
+    function outOfNavMenuDropdownClickHandler(e) {
+      if (!dropdown.contains(e.target)) {
+        navMenuDropdownList.classList.remove(navMenuDropdownListOpenedClass);
+      }
     }
   });
 });

@@ -4,11 +4,13 @@ include ../link-button/link-button
 //- Using example:
 
 mixin header(params)
-  - var userLogedClass = ''
+  - var classes = []
   if params
+    if params.isForUikit
+      - classes.push('header--for-uikit')
     if params.isUserLoged
-      - userLogedClass = 'header--with-user-loged'
-  .header(class=userLogedClass)
+      - classes.push('header--with-user-loged')
+  .header(class=classes)
     .header__content
       .header__logo
         +toxin-logo()
@@ -18,7 +20,7 @@ mixin header(params)
           {title: 'Услуги', subitems: [
             {title: 'Услуга 1', link: 'https://fsd.net/service1'},
             {title: 'Услуга 2', link: 'https://fsd.net/service2'},
-            {title: 'Услуга 3', link: 'https://fsd.net/service3'}
+            {title: 'Переселение', link: 'https://fsd.net/service3'}
           ]},
           {title: 'Вакансии', link: 'https://fsd.net/job'},
           {title: 'Новости', link: 'https://fsd.net/news'},
