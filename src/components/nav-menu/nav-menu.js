@@ -18,7 +18,10 @@ document.querySelectorAll(".nav-menu").forEach((navMenu) => {
     transition.once(navMenuList);
     navMenuList.classList.toggle(navMenuListOpenedClass);
     navMenuButton.classList.toggle(burgerOpenedClass);
+<<<<<<< HEAD
     isNavMenuOpened = !isNavMenuOpened;
+=======
+>>>>>>> Adaptive header is done
   }
 
   function outOfNavMenuClickHandler(e) {
@@ -26,7 +29,10 @@ document.querySelectorAll(".nav-menu").forEach((navMenu) => {
       transition.once(navMenuList);
       navMenuList.classList.remove(navMenuListOpenedClass);
       navMenuButton.classList.remove(burgerOpenedClass);
+<<<<<<< HEAD
       isNavMenuOpened = false;
+=======
+>>>>>>> Adaptive header is done
     }
   }
 
