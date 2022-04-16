@@ -139,6 +139,7 @@
 
   &__burger {
     display: none;
+    user-select: none;
     cursor: pointer;
     @media screen and (max-width: 768px) {
       display: block;
@@ -148,7 +149,25 @@
   &__burger-line {
     width: 2.5rem;
     height: 0.2rem;
-    background-color: rgba(#1f2041, 0.3);
+    background-color: rgba(31, 32, 65, 0.3);
     margin: 0.5rem;
+    transition: transform 0.1s ease-in, opacity 0.1s ease-in, background-color 0.1s ease-in;
+    transform-origin: center;
+  }
+
+  &__burger--opened &__burger-line {
+    background-color: rgba(31, 32, 65, 1);
+  }
+
+  &__burger--opened &__burger-line--first {
+    transform: translateY(0.7rem) rotate(45deg);
+  }
+
+  &__burger--opened &__burger-line--second {
+    opacity: 0;
+  }
+
+  &__burger--opened &__burger-line--third {
+    transform: translateY(-0.7rem) rotate(-45deg);
   }
 }

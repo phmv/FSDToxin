@@ -1,7 +1,7 @@
 include ../toxin-logo/toxin-logo
 include ../nav-menu/nav-menu
 include ../link-button/link-button
-//- Using example:
+//- Using example: +header({isUserLoged: true, isForUikit: true})
 
 mixin header(params)
   - var classes = []
@@ -10,7 +10,7 @@ mixin header(params)
       - classes.push('header--for-uikit')
     if params.isUserLoged
       - classes.push('header--with-user-loged')
-  .header(class=classes)
+  header.header(class=classes)
     .header__content
       .header__logo
         +toxin-logo()

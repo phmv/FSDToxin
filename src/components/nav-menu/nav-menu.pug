@@ -1,4 +1,10 @@
-//- Using example:
+//- Using example: +nav-menu([
+          {title: 'О нас', isImportant: true, link: 'https://fsd.net/aboutus'},
+          {title: 'Услуги', subitems: [
+            {title: 'Услуга 1', link: 'https://fsd.net/service1'},
+            {title: 'Услуга 2', link: 'https://fsd.net/service2'},
+            {title: 'Переселение', link: 'https://fsd.net/service3'}
+          ]}
 
 mixin nav-menu(items)
   nav.nav-menu
