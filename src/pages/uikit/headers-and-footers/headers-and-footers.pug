@@ -1,5 +1,7 @@
 extends ../../../templates/uikit-page/uikit-page
 include ../../../components/header/header
+include ../../../components/footer/footer
+include ../../../components/radio-button/radio-button
 
 block variables
   - var title = 'Headers and Footers';
@@ -11,3 +13,5 @@ block main
       +header({isForUikit: true})
     .headers-and-footers__item
       +header({isUserLoged: true, isForUikit: true})
+    .headers-and-footers__item
+      +footer({isForUikit: true})

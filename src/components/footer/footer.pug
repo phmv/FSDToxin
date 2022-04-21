@@ -1,0 +1,65 @@
+include ../toxin-logo/toxin-logo
+include ../subscription-form/subscription-form
+
+//- Using example:
+
+mixin footer(params)
+  - var classes = []
+  if params
+    if params.isForUikit
+      - classes.push('footer--for-uikit')
+
+  footer.footer(class = classes)
+    .footer__main
+      .footer__wrapper
+        .footer__logo-and-description
+          .footer__logo
+            +toxin-logo()
+          .footer__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        .footer__nav-block
+          h3.footer__nav-block-header Навигация
+          ul.footer__nav-block-list
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/aboutus') О нас
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/news') Новости
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/support') Служба поддержки
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/services') Услуги
+        .footer__nav-block
+          h3.footer__nav-block-header О нас
+          ul.footer__nav-block-list
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/about-service') О сервисе
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/our-team') Наша команда
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/vacancies') Вакансии
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/investors') Инвесторы
+        .footer__nav-block
+          h3.footer__nav-block-header Служба поддержки
+          ul.footer__nav-block-list
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/agreements') Соглашения
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/communities') Сообщества
+            li.footer__nav-block-listitem
+              a.footer__nav-block-link(href='http://fsdmocklink/contacts') Связь с нами
+        .footer__subscription
+          h3.footer__nav-block-header Подписка
+          .footer__subscription-item Получайте специальные предложения и новости сервиса
+          .footer__subscription-item
+            +subscription-form({id: 'footer-subscription', name: 'subscription-email', placeholder: 'Email'})
+    .footer__copyrights-and-socials
+      .footer__wrapper
+        .footer__copyrights Copyright © 2018 Toxin отель. Все права защищены.
+        .footer__socials
+          a.footer__social-link(href='http://fsdmockuplink/twitter.com', target='_blank')
+            i.footer__social-link-logo.fa-brands.fa-twitter
+          a.footer__social-link.footer__social-link--facebook(href='http://fsdmockuplink/facebook.com', target='_blank')
+            i.footer__social-link-logo.fa-brands.fa-facebook-square
+          a.footer__social-link(href='http://fsdmockuplink/instagram.com', target='_blank')
+            i.footer__social-link-logo.fa-brands.fa-instagram
+

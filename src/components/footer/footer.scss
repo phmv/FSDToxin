@@ -1,0 +1,151 @@
+.footer {
+  width: 100%;
+  background-color: #ffffff;
+
+  &--for-uikit {
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
+
+  &__main {
+    padding: 10rem 2rem;
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+
+    @media screen and (max-width: 768px) {
+      padding: 12rem 2rem;
+      padding-bottom: 0;
+      box-shadow: none;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 116rem;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__logo-and-description {
+    max-width: 26rem;
+    flex-basis: 26rem;
+    margin-right: 1rem;
+
+    @media screen and (max-width: 768px) {
+      flex-basis: auto;
+      margin: auto;
+    }
+  }
+
+  &__logo {
+    @media screen and (max-width: 768px) {
+      width: fit-content;
+    }
+  }
+
+  &__description {
+    margin-top: 2rem;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__nav-block {
+    min-width: 10rem;
+    margin: 0 1rem;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__nav-block-header {
+    margin: 0;
+    margin-top: 0.4rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    color: rgb(31, 32, 65);
+  }
+
+  &__nav-block-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__nav-block-listitem {
+    margin-top: 2rem;
+  }
+
+  &__nav-block-link {
+    text-decoration: none;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &__nav-block-link:hover,
+  &__nav-block-link:active,
+  &__nav-block-link:visited,
+  &__nav-block-link:focus {
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &__subscription {
+    max-width: 26rem;
+    flex-basis: 26rem;
+    margin-left: 1rem;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__subscription-item {
+    margin-top: 2rem;
+  }
+
+  &__copyrights-and-socials {
+    padding: 2.3rem 2rem;
+
+    @media screen and (max-width: 768px) {
+      padding: 2rem;
+      padding-bottom: 12rem;
+    }
+  }
+
+  &__copyrights {
+    text-align: center;
+  }
+
+  &__socials {
+    display: flex;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    height: 2.4rem;
+    text-decoration: none;
+
+    &--facebook {
+      margin: 0 2rem;
+    }
+  }
+
+  &__social-link-logo {
+    font-size: 2.4rem;
+    font-style: normal;
+    color: #bc9cff;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: -moz-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

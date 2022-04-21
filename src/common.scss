@@ -1,5 +1,6 @@
-@import './assets/fonts/fonts.scss';
-@import './assets/mixes.scss'; //All used titles mixes are here
+@import "./assets/fonts/fa-brands/css/brands.min.css";
+@import "./assets/fonts/fonts.scss";
+@import "./assets/mixes.scss"; //All used titles mixes are here
 
 html {
   font-size: 62.5%; // 62,5% of 16px is 10px // 71.4285713% (1.4rem = 16px)
@@ -13,11 +14,11 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Montserrat', Helvetica , Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 1.4rem;
   line-height: 2.4rem;
   font-weight: normal;
-	color: rgba(#1f2041, 0.75);
+  color: rgba(#1f2041, 0.75);
 }
 
 .nowrap {
