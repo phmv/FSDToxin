@@ -18,6 +18,7 @@ document.querySelectorAll(".nav-menu").forEach((navMenu) => {
     transition.once(navMenuList);
     navMenuList.classList.toggle(navMenuListOpenedClass);
     navMenuButton.classList.toggle(burgerOpenedClass);
+    isNavMenuOpened = !isNavMenuOpened;
   }
 
   function outOfNavMenuClickHandler(e) {
