@@ -1,4 +1,5 @@
 import "./nav-menu.scss";
+import * as transition from "../../utils/transition-block/transition-blocker.js";
 
 document.querySelectorAll(".nav-menu").forEach((navMenu) => {
   let navMenuList = navMenu.querySelector(".nav-menu__list");
@@ -9,15 +10,23 @@ document.querySelectorAll(".nav-menu").forEach((navMenu) => {
   navMenuButton.addEventListener("click", navMenuButtonClickHandler);
   document.addEventListener("click", outOfNavMenuClickHandler);
 
+  let isNavMenuOpened = false;
+
+  transition.block(navMenuList);
+
   function navMenuButtonClickHandler(e) {
+    transition.once(navMenuList);
     navMenuList.classList.toggle(navMenuListOpenedClass);
     navMenuButton.classList.toggle(burgerOpenedClass);
+    isNavMenuOpened = !isNavMenuOpened;
   }
 
   function outOfNavMenuClickHandler(e) {
-    if (!navMenuList.contains(e.target) && !navMenuButton.contains(e.target)) {
+    if (!navMenuList.contains(e.target) && !navMenuButton.contains(e.target) && isNavMenuOpened) {
+      transition.once(navMenuList);
       navMenuList.classList.remove(navMenuListOpenedClass);
       navMenuButton.classList.remove(burgerOpenedClass);
+      isNavMenuOpened = false;
     }
   }
 
@@ -25,8 +34,6 @@ document.querySelectorAll(".nav-menu").forEach((navMenu) => {
     let navMenuDropdownList = dropdown.querySelector(".nav-menu__dropdown-list");
 
     let navMenuDropdownListOpenedClass = "nav-menu__dropdown-list--opened";
-
-    let openedDropdownList;
 
     dropdown.addEventListener("click", dropdownClickEventHandler);
     document.addEventListener("click", outOfNavMenuDropdownClickHandler);
