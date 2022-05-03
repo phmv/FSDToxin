@@ -1,3 +1,4 @@
+import "../link-button/link-button";
 import "./nav-menu.scss";
 import * as transition from "../../utils/transition-block/transition-blocker.js";
 
@@ -5,8 +6,7 @@ document.querySelectorAll(".nav-menu").forEach((navMenu) => {
   let navMenuList = navMenu.querySelector(".nav-menu__list");
   let navMenuButton = navMenu.querySelector(".nav-menu__burger");
   let navMenuDropdowns = navMenu.querySelectorAll(".nav-menu__dropdown");
-  let burgerOpenedClass = "nav-menu__burger--opened";
-  let navMenuListOpenedClass = "nav-menu__list--opened";
+
   navMenuButton.addEventListener("click", navMenuButtonClickHandler);
   document.addEventListener("click", outOfNavMenuClickHandler);
 
@@ -16,8 +16,7 @@ document.querySelectorAll(".nav-menu").forEach((navMenu) => {
 
   function navMenuButtonClickHandler(e) {
     transition.once(navMenuList);
-    navMenuList.classList.toggle(navMenuListOpenedClass);
-    navMenuButton.classList.toggle(burgerOpenedClass);
+    navMenuList.classList.toggle(navMenuActiveClass);
     isNavMenuOpened = !isNavMenuOpened;
   }
 

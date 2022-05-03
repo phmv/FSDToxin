@@ -1,0 +1,34 @@
+.website-page {
+  &__wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__cover {
+    height: 100vh;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    min-width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+
+  &__cover &__header {
+    flex: 0 0 auto;
+  }
+
+  &__main {
+    flex: 1 0 auto;
+  }
+
+  &__footer {
+    min-width: 100%;
+    flex: 0 0 auto;
+  }
+}

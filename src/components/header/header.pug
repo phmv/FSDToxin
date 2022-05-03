@@ -1,21 +1,14 @@
 include ../toxin-logo/toxin-logo
 include ../nav-menu/nav-menu
-include ../link-button/link-button
-//- Using example: +header({isUserLoged: true, isForUikit: true})
+//- Using example: +header({isUserLoged: true})
 
-mixin header(params)
-  - var classes = []
-  if params
-    if params.isForUikit
-      - classes.push('header--for-uikit')
-    if params.isUserLoged
-      - classes.push('header--with-user-loged')
-  header.header(class=classes)
+mixin header(params = {isUserLoged: false})
+  .header
     .header__content
       .header__logo
         +toxin-logo()
       .header__menu
-        +nav-menu([
+        +nav-menu({items: [
           {title: 'О нас', isImportant: true, link: 'https://fsd.net/aboutus'},
           {title: 'Услуги', subitems: [
             {title: 'Услуга 1', link: 'https://fsd.net/service1'},
@@ -29,14 +22,4 @@ mixin header(params)
             {title: 'Соглашение 2', link: 'https://fsd.net/agreement2'},
             {title: 'Соглашение 3', link: 'https://fsd.net/agreement3'}
           ]}
-          ])
-      .header__authorization
-        .header__signing-buttons
-          .header__login-button
-            +link-button({text: 'Войти', linkTo: 'somelink', theme: 'secondary', headerButton: true})
-          .header__sign-up-button
-            +link-button({text: 'Зарегистрироваться', linkTo: 'somelink', theme: 'primary', headerButton: true})
-        .header__profile
-          .header__username Константин Константинопольский
-      button.header__profile-button(title='User Menu')
-          span.material-icons person_outline
+          ], isUserLoged: params.isUserLoged})

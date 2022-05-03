@@ -1,0 +1,28 @@
+include ../../components/header/header
+include ../../components/footer/footer
+
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title #{title}
+
+  body.website-page
+    .website-page__wrapper
+      if isWithCover
+        .website-page__cover
+          header.website-page__header
+            +header()
+          main.website-page__main
+            block main
+      else
+        header.website-page__header
+          +header()
+        main.website-page__main
+          block main
+      footer.website-page__footer
+        +footer()

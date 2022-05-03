@@ -6,7 +6,7 @@
   border: 1px solid rgba(#1f2041, 0.25);
   border-radius: 0.4rem;
   color: rgba(#1f2041, 0.75);
-  font-family: 'Montserrat', Helvetica , Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 1.4rem;
   line-height: 1.8rem;
 
@@ -14,7 +14,7 @@
     color: rgba(#1f2041, 0.25);
   }
 
-  &:focus{
+  &:focus {
     outline: none;
     box-shadow: none;
   }
@@ -26,6 +26,14 @@
 
   &--right-space {
     padding-right: calc(4.2rem + 2px);
+
+    @media screen and (max-height: 768px) {
+      padding-right: calc(3rem + 2px);
+    }
+
+    @media screen and (max-width: 480px) {
+      padding-right: calc(3rem + 2px);
+    }
   }
 
   &--dropdown {

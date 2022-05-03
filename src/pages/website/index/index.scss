@@ -1,0 +1,47 @@
+.landing-page {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 7rem 2rem 1.8rem;
+  background-image: url("./img/bg-landing.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &__cover-content {
+    height: 100%;
+    position: relative;
+    max-width: 116rem;
+    margin: 0 auto;
+  }
+
+  &__search-room {
+    @media screen and (max-width: 480px) {
+      margin: 0 auto;
+    }
+    @media screen and (max-height: 768px) {
+      max-width: 35rem;
+    }
+  }
+
+  &__slogan {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 30rem;
+    text-align: right;
+
+    @media screen and (max-width: 480px) {
+      min-width: 28rem;
+      text-align: center;
+      right: 50%;
+      transform: translate(50%, 0);
+    }
+  }
+
+  @media screen and (max-height: 768px) {
+    padding-top: 2.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 2.5rem;
+  }
+}

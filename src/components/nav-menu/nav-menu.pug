@@ -1,15 +1,19 @@
-//- Using example: +nav-menu([
+include ../link-button/link-button
+//- Using example: +nav-menu({items: [
           {title: 'О нас', isImportant: true, link: 'https://fsd.net/aboutus'},
           {title: 'Услуги', subitems: [
             {title: 'Услуга 1', link: 'https://fsd.net/service1'},
             {title: 'Услуга 2', link: 'https://fsd.net/service2'},
             {title: 'Переселение', link: 'https://fsd.net/service3'}
-          ]}
+          ], isUserLoged: true}
 
-mixin nav-menu(items)
-  nav.nav-menu
+mixin nav-menu(params)
+  - var classes = []
+  if params.isUserLoged
+    - classes.push('nav-menu--with-user-loged')
+  nav.nav-menu(class=classes)
     ul.nav-menu__list
-      each item in items
+      each item in params.items
         - var itemClassList = ['nav-menu__item']
         if item.isImportant
           - itemClassList.push('nav-menu__item--important')
@@ -23,6 +27,14 @@ mixin nav-menu(items)
                     a.nav-menu__link.nav-menu__dropdown-link(href=subitem.link)!= subitem.title
           else
             a.nav-menu__link(href=item.link)!= item.title
+    .nav-menu__authorization
+      .nav-menu__signing-buttons
+        .nav-menu__login-button
+          +link-button({text: 'Войти', linkTo: 'somelink', theme: 'secondary', headerButton: true})
+        .nav-menu__signup-button
+          +link-button({text: 'Зарегистрироваться', linkTo: 'somelink', theme: 'primary', headerButton: true})
+      .nav-menu__profile
+        .nav-menu__username Константин Константинопольский
     .nav-menu__burger
       .nav-menu__burger-line.nav-menu__burger-line--first
       .nav-menu__burger-line.nav-menu__burger-line--second
