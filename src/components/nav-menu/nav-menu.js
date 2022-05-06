@@ -3,47 +3,48 @@ import "./nav-menu.scss";
 import * as transition from "../../utils/transition-block/transition-blocker.js";
 
 document.querySelectorAll(".nav-menu").forEach((navMenu) => {
-  let navMenuList = navMenu.querySelector(".nav-menu__list");
-  let navMenuButton = navMenu.querySelector(".nav-menu__burger");
-  let navMenuDropdowns = navMenu.querySelectorAll(".nav-menu__dropdown");
-
-  navMenuButton.addEventListener("click", navMenuButtonClickHandler);
-  document.addEventListener("click", outOfNavMenuClickHandler);
-
+  let list = navMenu.querySelector(".nav-menu__list");
+  let burgerButton = navMenu.querySelector(".nav-menu__burger");
+  let dropdowns = navMenu.querySelectorAll(".nav-menu__dropdown");
   let isNavMenuOpened = false;
 
-  transition.block(navMenuList);
+  burgerButton.addEventListener("click", burgerButtonClickHandler);
+  document.addEventListener("click", outOfNavMenuClickHandler);
 
-  function navMenuButtonClickHandler(e) {
-    transition.once(navMenuList);
-    navMenuList.classList.toggle(navMenuActiveClass);
+  window.addEventListener("blur", function () {
+    isNavMenuOpened = false;
+    navMenu.dataset.active = false;
+  });
+
+  transition.block(list);
+
+  function burgerButtonClickHandler(e) {
+    transition.once(list);
     isNavMenuOpened = !isNavMenuOpened;
+    navMenu.dataset.active = isNavMenuOpened;
   }
 
   function outOfNavMenuClickHandler(e) {
-    if (!navMenuList.contains(e.target) && !navMenuButton.contains(e.target) && isNavMenuOpened) {
-      transition.once(navMenuList);
-      navMenuList.classList.remove(navMenuListOpenedClass);
-      navMenuButton.classList.remove(burgerOpenedClass);
+    if (!list.contains(e.target) && !burgerButton.contains(e.target) && isNavMenuOpened) {
+      transition.once(list);
       isNavMenuOpened = false;
+      navMenu.dataset.active = isNavMenuOpened;
     }
   }
 
-  navMenuDropdowns.forEach((dropdown) => {
-    let navMenuDropdownList = dropdown.querySelector(".nav-menu__dropdown-list");
-
-    let navMenuDropdownListOpenedClass = "nav-menu__dropdown-list--opened";
+  dropdowns.forEach((dropdown) => {
+    let navMenuDropdownOpenedClass = "nav-menu__dropdown--opened";
 
     dropdown.addEventListener("click", dropdownClickEventHandler);
     document.addEventListener("click", outOfNavMenuDropdownClickHandler);
 
     function dropdownClickEventHandler(e) {
-      navMenuDropdownList.classList.toggle(navMenuDropdownListOpenedClass);
+      dropdown.classList.toggle(navMenuDropdownOpenedClass);
     }
 
     function outOfNavMenuDropdownClickHandler(e) {
       if (!dropdown.contains(e.target)) {
-        navMenuDropdownList.classList.remove(navMenuDropdownListOpenedClass);
+        dropdown.classList.remove(navMenuDropdownOpenedClass);
       }
     }
   });
