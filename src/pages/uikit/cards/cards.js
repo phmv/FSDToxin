@@ -1,3 +1,4 @@
+import "../../../templates/uikit-page/uikit-page";
 import "../../../plugins/datepicker/datepicker";
 import "../../../forms/search-room-form/search-room-form";
 import "../../../forms/sign-up-form/sign-up-form";
