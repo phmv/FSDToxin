@@ -1,4 +1,7 @@
 // Common utils and templates imports
-import './common.scss'
-import './templates/uikit-page/uikit-page'
-import './templates/form-card/form-card'
+import $ from "jquery";
+
+global.jQuery = $;
+global.$ = $;
+import "./common.scss";
+import "./templates/form-card/form-card";

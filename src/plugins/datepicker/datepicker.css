@@ -31,11 +31,7 @@
   justify-content: center;
 }
 .datepicker--cell.-focus- {
-  background: linear-gradient(
-    180deg,
-    rgba(188, 156, 255, 0.25) 0%,
-    rgba(139, 164, 249, 0.25) 100%
-  );
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
 }
 .datepicker--cell.-current- {
   font-weight: 600;
@@ -43,30 +39,18 @@
   color: #ffffff;
 }
 .datepicker--cell.-current-.-focus- {
-  background: linear-gradient(
-    180deg,
-    rgba(188, 156, 255, 0.25) 0%,
-    rgba(139, 164, 249, 0.25) 100%
-  );
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
   color: rgba(31, 32, 65, 0.5);
 }
 .datepicker--cell.-current-.-in-range- {
   color: rgba(31, 32, 65, 0.75);
 }
 .datepicker--cell.-in-range- {
-  background: linear-gradient(
-    180deg,
-    rgba(188, 156, 255, 0.25) 0%,
-    rgba(139, 164, 249, 0.25) 100%
-  );
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
   border-radius: 0;
 }
 .datepicker--cell.-in-range-.-focus- {
-  background: linear-gradient(
-    180deg,
-    rgba(188, 156, 255, 0.5) 0%,
-    rgba(129, 149, 214, 0.5) 100%
-  );
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(129, 149, 214, 0.5) 100%);
 }
 .datepicker--cell.-disabled- {
   cursor: default;
@@ -83,11 +67,7 @@
 }
 .datepicker--cell.-range-from-,
 .datepicker--cell.-range-to- {
-  background: linear-gradient(
-    180deg,
-    hsl(259, 100%, 92%) 0%,
-    hsl(226, 90%, 87%) 100%
-  );
+  background: linear-gradient(180deg, hsl(259, 100%, 92%) 0%, hsl(226, 90%, 87%) 100%);
 }
 .datepicker--cell.-range-from-::after,
 .datepicker--cell.-range-to-::after {
@@ -98,11 +78,7 @@
   width: 50%;
   height: 0;
   padding-bottom: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(188, 156, 255, 0.25) 0%,
-    rgba(139, 164, 249, 0.25) 100%
-  );
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
   z-index: -1;
 }
 .datepicker--cell.-range-to-::after {
@@ -134,6 +110,18 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-top: 1rem;
+}
+
+@media screen and (max-height: 768px) {
+  .datepicker--days-names {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .datepicker--days-names {
+    margin-top: 0;
+  }
 }
 
 .datepicker--day-name {
@@ -248,9 +236,8 @@
   opacity: 0;
   transition: opacity 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s;
-  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s,
-    -webkit-transform 0.3s ease;
-  z-index: 100;
+  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0.3s, -webkit-transform 0.3s ease;
+  z-index: 2;
 }
 .datepicker.-from-top- {
   -webkit-transform: translateY(-8px);
@@ -275,8 +262,7 @@
   transform: translate(0);
   transition: opacity 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
-  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s,
-    -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease;
 }
 
 .datepicker-inline {
@@ -564,8 +550,7 @@
   align-items: center;
   font-size: 11px;
   height: 17px;
-  background: linear-gradient(to right, #dedede, #dedede) left 50%/100% 1px
-    no-repeat;
+  background: linear-gradient(to right, #dedede, #dedede) left 50%/100% 1px no-repeat;
 }
 .datepicker--time-row:first-child {
   margin-bottom: 4px;

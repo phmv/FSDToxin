@@ -1,15 +1,10 @@
 include ../toxin-logo/toxin-logo
 include ../subscription-form/subscription-form
 
-//- Using example: +footer({isForUikit: true})
+//- Using example: +footer()
 
-mixin footer(params)
-  - var classes = []
-  if params
-    if params.isForUikit
-      - classes.push('footer--for-uikit')
-
-  footer.footer(class = classes)
+mixin footer()
+  .footer
     .footer__main
       .footer__wrapper
         .footer__logo-and-description

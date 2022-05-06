@@ -1,0 +1,12 @@
+extends ../../../templates/website-page/website-page
+
+block variables
+  - let title = 'Landing page'
+  - let isWithCover = true
+
+block main
+  .landing-page
+    .landing-page__cover-content
+      .landing-page__search-room
+        include ../../../forms/search-room-form/search-room-form
+      .landing-page__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
