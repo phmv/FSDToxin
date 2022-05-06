@@ -117,9 +117,5 @@ module.exports = {
           filename: `./${path.basename(page).replace(/\.pug/, ".html")}`,
         })
     ),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-    }),
   ],
 };
