@@ -14,12 +14,12 @@ mixin nav-menu(params)
   nav.nav-menu(class=classes, data-active='false')
     .nav-menu__content-cover
     ul.nav-menu__list
-      .nav-menu__authorization
-        .nav-menu__signing-button.nav-menu__signing-button--mobile
+      .nav-menu__authorization.nav-menu__authorization--mobile
+        .nav-menu__signing-button
           +link-button({text: 'Войти', linkTo: 'somelink', theme: 'secondary', headerButton: true})
-        .nav-menu__signing-button.nav-menu__signing-button--mobile
+        .nav-menu__signing-button
           +link-button({text: 'Зарегистрироваться', linkTo: 'somelink', theme: 'primary', headerButton: true})
-        .nav-menu__profile.nav-menu__profile--mobile
+        .nav-menu__profile
           .nav-menu__username Константин Константинопольский
       each item in params.items
         - var itemClassList = ['nav-menu__item']
@@ -35,12 +35,13 @@ mixin nav-menu(params)
                     a.nav-menu__link.nav-menu__dropdown-link(href=subitem.link)!= subitem.title
           else
             a.nav-menu__link(href=item.link)!= item.title
-    .nav-menu__signing-button
-      +link-button({text: 'Войти', linkTo: 'somelink', theme: 'secondary', headerButton: true})
-    .nav-menu__signing-button
-      +link-button({text: 'Зарегистрироваться', linkTo: 'somelink', theme: 'primary', headerButton: true})
-    .nav-menu__profile
-      .nav-menu__username Константин Константинопольский
+    .nav-menu__authorization
+      .nav-menu__signing-button
+        +link-button({text: 'Войти', linkTo: 'somelink', theme: 'secondary', headerButton: true})
+      .nav-menu__signing-button
+        +link-button({text: 'Зарегистрироваться', linkTo: 'somelink', theme: 'primary', headerButton: true})
+      .nav-menu__profile
+        .nav-menu__username Константин Константинопольский
     .nav-menu__burger
       .nav-menu__burger-line.nav-menu__burger-line--first
       .nav-menu__burger-line.nav-menu__burger-line--second
