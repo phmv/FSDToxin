@@ -13,16 +13,17 @@ html(lang='en')
 
   body.website-page
     .website-page__wrapper
-      if isWithCover
-        .website-page__cover
+      if isWithHero
+        .website-page__hero
           header.website-page__header
             +header()
           main.website-page__main
             block main
       else
-        header.website-page__header
-          +header()
-        main.website-page__main
-          block main
+        .website-page__header-area
+          header.website-page__header
+            +header()
+          main.website-page__main
+            block main
       footer.website-page__footer
         +footer()

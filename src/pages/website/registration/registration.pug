@@ -1,0 +1,10 @@
+extends ../../../templates/website-page/website-page
+
+block variables
+  - let title = 'Registration'
+  - let isWithHero = true
+
+block main
+  .registration-page
+      .registration-page__registration-form
+        include ../../../forms/sign-up-form/sign-up-form

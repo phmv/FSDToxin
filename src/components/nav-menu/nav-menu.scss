@@ -239,6 +239,10 @@
   }
 
   @media screen and (max-width: 560px) {
+    &__content-cover {
+      display: none;
+    }
+
     &__list {
       width: 100%;
     }
