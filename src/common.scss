@@ -5,7 +5,7 @@
 html {
   height: 100%;
   font-size: 62.5%; // 62,5% of 16px is 10px // 71.4285713% (1.4rem = 16px)
-  @media (min-width: 1440px) {
+  @media (min-width: 1441px) {
     font-size: 71.4285713%;
   }
 }
