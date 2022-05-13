@@ -4,6 +4,7 @@
   &__links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   &__link {
@@ -18,7 +19,7 @@
     color: rgba(31, 32, 65, 0.5);
 
     &--number:hover:not(.pagination__link--active) {
-      background: linear-gradient(180deg, rgba(188,156,255, 0.25) 0%, rgba(139,164,249,0.25) 100%)
+      background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
     }
 
     &--ellipsis {
@@ -28,16 +29,17 @@
     &--active {
       font-weight: 600;
       color: #ffffff;
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       cursor: default;
       pointer-events: none;
     }
 
-    &--previous, &--next {
+    &--previous,
+    &--next {
       color: #ffffff;
-      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       &::after {
-        font-family: 'Material Icons';
+        font-family: "Material Icons";
         font-weight: normal;
         font-size: 2.4rem;
         line-height: 2.4rem;
@@ -46,12 +48,12 @@
 
     &--previous {
       &::after {
-        content: '\e5c4';
+        content: "\e5c4";
       }
     }
     &--next {
       &::after {
-        content: '\e5c8'
+        content: "\e5c8";
       }
     }
   }
