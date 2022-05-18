@@ -1,8 +1,8 @@
 include ../checkbox/checkbox
 include ../toggle-button/toggle-button
 
-//- Using example: +checkbox-list({id: 'idPrefix', title: 'List title', items: [
-  {label: 'cb-label', name: 'cb-name', checked: boolean(optional), desc: 'description'(optional)}
+//- Using example: +checkbox-list({id: 'idPrefix', title: 'List title', expandable: true (optional) items: [
+  {label: 'cb-label', name: 'cb-name', checked: boolean(optional), desc: 'description for rich checkboxes'(optional)}
 //- ]})
 
 mixin checkbox-list(params)
@@ -16,4 +16,4 @@ mixin checkbox-list(params)
     ul.checkbox-list__container
       each checkbox in params.items
         li.checkbox-list__item
-          +checkbox({id: params.id + `-${checkbox.name}`, label: checkbox.label, name: checkbox.name, checked: checkbox.checked, desc: checkbox.desc})
+          +checkbox({id: params.id + `-${checkbox.name}`, label: checkbox.label, name: params.id + `-${checkbox.name}`, checked: checkbox.checked, desc: checkbox.desc})
