@@ -2,14 +2,14 @@
   $thumb-border: 2px;
   $thumb-size: 1.2rem;
   box-sizing: border-box;
-  padding-bottom: calc(0.3rem + 2px);
   width: 100%;
   max-width: 32rem;
+  border-bottom: 1px solid transparent;
 
   &__top {
     display: flex;
     justify-content: space-between;
-    font-family: 'Montserrat', Helvetica , Arial, sans-serif;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
     font-size: 1.2rem;
     line-height: 1.5rem;
     text-transform: uppercase;
@@ -28,11 +28,12 @@
     --height: 0.6rem;
     position: relative;
     margin-top: 2rem;
+    margin-bottom: calc(0.3rem + 1px);
     width: 100%;
     z-index: 1;
     height: var(--height);
 
-    input[type=range] {
+    input[type="range"] {
       position: absolute;
       margin: 0;
       width: 100%;
@@ -42,11 +43,11 @@
       opacity: 0;
     }
 
-    input[type=range]:focus {
+    input[type="range"]:focus {
       outline: none;
     }
 
-    input[type=range]::-webkit-slider-thumb {
+    input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
       width: calc(#{$thumb-size} + 2 * #{$thumb-border});
       height: calc(#{$thumb-size} + 2 * #{$thumb-border});
@@ -55,7 +56,7 @@
       opacity: 0;
     }
 
-    input[type=range]::-moz-range-thumb {
+    input[type="range"]::-moz-range-thumb {
       -moz-appearance: none;
       width: calc(#{$thumb-size} + 2 * #{$thumb-border});
       height: calc(#{$thumb-size} + 2 * #{$thumb-border});
@@ -78,7 +79,7 @@
 
   &__range-wrapper {
     position: absolute;
-    margin: auto calc((#{$thumb-size}/2) + #{$thumb-border});
+    margin: auto calc((#{$thumb-size}/ 2) + #{$thumb-border});
     top: 0;
     bottom: 0;
     left: 0;
@@ -93,12 +94,12 @@
     right: 25%;
     top: 0;
     bottom: 0;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     border-radius: 0.3rem;
   }
 
   &__thumb {
-    $tranlationx: calc(#{$thumb-size}/2 + #{$thumb-border});
+    $tranlationx: calc(#{$thumb-size}/ 2 + #{$thumb-border});
     $tranlationy: calc(((#{$thumb-size} + 2 * #{$thumb-border}) - var(--height)) / -2);
     position: absolute;
     box-sizing: content-box;
@@ -107,7 +108,7 @@
     height: $thumb-size;
     border: $thumb-border solid #ffffff;
     border-radius: 50%;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     transform: translateY($tranlationy);
 
     &--left {
@@ -119,5 +120,12 @@
       right: 25%;
       transform: translate($tranlationx, $tranlationy);
     }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: rgba(31, 32, 65, 0.5);
+    margin-top: 1rem;
   }
 }

@@ -1,4 +1,4 @@
-//- Using example: +range-slider({title: 'Range title', id: 'range-slider-id', name: 'range-slider-name',step: number, min: number, max: number, currency: '₽'})
+//- Using example: +range-slider({title: 'Range title', id: 'range-slider-id', name: 'range-slider-name',step: number, min: number, max: number, currency: '₽', descroption: 'string' (optional)})
 
 mixin range-slider(params)
   - var valueStep = (params.max - params.min) / 100 // 1% of range
@@ -21,3 +21,5 @@ mixin range-slider(params)
         .range-slider__range
         .range-slider__thumb.range-slider__thumb--left
         .range-slider__thumb.range-slider__thumb--right
+    if params.description
+      .range-slider__description!=params.description

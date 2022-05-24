@@ -11,7 +11,7 @@
 
   &__title {
     margin: 1rem 0;
-    font-family: 'Montserrat', Helvetica , Arial, sans-serif;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
     font-size: 2.4rem;
     line-height: 3rem;
     font-weight: 700;
@@ -42,5 +42,10 @@
 
   @media (max-width: 420px) {
     padding: 2rem;
+
+    &__title {
+      margin: 0;
+      font-size: 2rem;
+    }
   }
 }

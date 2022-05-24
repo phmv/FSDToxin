@@ -5,11 +5,17 @@
     flex-direction: column;
   }
 
-  &__cover {
-    height: 100vh;
-    min-height: 560px;
+  &__hero {
+    flex-basis: 100vh;
     display: flex;
     flex-direction: column;
+  }
+
+  &__header-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.25);
   }
 
   &__header {
@@ -19,7 +25,7 @@
     z-index: 3;
   }
 
-  &__cover &__header {
+  &__hero &__header {
     flex: 0 0 auto;
   }
 

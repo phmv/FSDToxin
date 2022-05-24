@@ -6,9 +6,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  &__cover-content {
+
+  &__hero-content {
     height: 100%;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     max-width: 116rem;
     margin: 0 auto;
   }
@@ -23,17 +26,14 @@
   }
 
   &__slogan {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     max-width: 30rem;
+    margin-top: 2rem;
     text-align: right;
-
+    align-self: flex-end;
     @media screen and (max-width: 480px) {
       min-width: 28rem;
       text-align: center;
-      right: 50%;
-      transform: translate(50%, 0);
+      align-self: center;
     }
   }
 

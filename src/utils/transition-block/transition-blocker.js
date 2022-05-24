@@ -1,5 +1,5 @@
 import "./transition-blocker.css";
-export { transitionOn as on, transitionOnce as once, transitionBlock as block };
+export { transitionOn as on, transitionOnce as once, transitionBlock as block, whichTransitionEvent as transitionEndEvent };
 let transitionBlockedClass = "transition-blocked";
 
 function transitionOn(target) {

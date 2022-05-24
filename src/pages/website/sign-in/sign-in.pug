@@ -1,0 +1,10 @@
+extends ../../../templates/website-page/website-page
+
+block variables
+  - let title = 'Sign in'
+  - let isWithHero = true
+
+block main
+  .sign-in-page
+      .sign-in-page__login-form
+        include ../../../forms/sign-in-form/sign-in-form
