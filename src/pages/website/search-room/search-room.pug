@@ -1,0 +1,93 @@
+extends ../../../templates/website-page/website-page
+include ../../../components/input-container/input-container
+include ../../../components/dropdown/dropdown
+include ../../../components/range-slider/range-slider
+include ../../../components/checkbox-list/checkbox-list
+include ../../../components/submit-button/submit-button
+include ../../../components/room-card/room-card
+include ../../../components/pagination/pagination
+block variables
+  - let title = 'Search room'
+
+block main
+  .search-room-page
+    .search-room-page__wrapper
+      .search-room-page__filters
+        form.search-room-page__filters-form
+          .search-room-page__filters-wrapper
+            .search-room-page__filter
+              +input-container({label: 'Даты пребывания в отеле', for: 'staying-dates'})
+                +dropdown({dropdownType: 'range-date', id: 'staying-dates', name: 'staying-dates'})
+            .search-room-page__filter.search-room-page__filter--small-margin
+              +input-container({label: 'Гости', for: 'guests'})
+                +dropdown({dropdownType: 'guests', id: 'guests', name: 'guests'})
+            .search-room-page__filter
+              +range-slider({title: 'Диапазон цены', id: 'range-slider-id', name: 'range-slider-name',step: 100, min: 0, max: 15000, currency: '₽', description:'Стоимость за сутки пребывания в номере'})
+            .search-room-page__filter
+              +checkbox-list({id: 'rules', title: 'Правила дома',
+              items: [
+                {label: 'Можно курить', name: 'smoking-allowed'},
+                {label: 'Можно с питомцами', name: 'pets-allowed', checked: true},
+                {label: 'Можно пригласить гостей', name: 'guests-allowed', checked: true}
+              ]
+            })
+            .search-room-page__filter
+              +checkbox-list({id: 'accessibility', title: 'Доступность',
+                items: [
+                  {label: 'Широкий коридор', name: 'wide-corridor', desc: 'Ширина коридоров в номере <span class="nowrap">не менее</span> 91 см.'},
+                  {label: 'Помощник для инвалидов', name: 'disabled-person-helper', desc: 'На 1 этаже вас встретит специалист <span class="nowrap">и проводит</span> до номера.'}
+                ]
+              })
+            .search-room-page__filter
+              +input-container({label: 'Удобства номера', for: 'room-amenities'})
+                +dropdown({dropdownType: 'room-features', id: 'room-amenities', name: 'room-amenities'})
+            .search-room-page__filter
+              +checkbox-list({id: 'additional-amentieis', title: 'Дополнительные удобства', expandable: true,
+                items: [
+                  {label: 'Завтрак', name: 'breakfast'},
+                  {label: 'Письменный стол', name: 'desk', checked: true},
+                  {label: 'Стул для кормления', name: 'feeding-chair', checked: true},
+                  {label: 'Кроватка', name: 'crib', checked: true},
+                  {label: 'Телевизор', name: 'tv'},
+                  {label: 'Шампунь', name: 'shampoo'}
+                ]
+              })
+            .search-room-page__filters-submit
+              .search-room-page__filters-submit-wrapper
+                .search-room-page__filters-submit-text
+                  != 'Найдено <span class="search-room-page__results-number">215</span> вариантов'
+                .search-room-page__filters-submit-button
+                  +submit-button('Показать')
+        .search-room-page__filters-button
+          .search-room-page__wrapper
+            span.search-room-page__filters-text Фильтры
+            span.search-room-page__filters-arrow expand_more
+      section.search-room-page__results
+        h1.search-room-page__title Номера, которые мы для вас подобрали
+        .search-room-page__cards
+          .search-room-page__card
+            +room-card({roomNumber: '888', images: [require('../../../assets/img/room888.png'), require('../../../assets/img/room888.png'), require('../../../assets/img/room888.png'), require('../../../assets/img/room888.png')],  type: 'люкс', price: '9&nbsp;990', rating: 5, reviewsNumber: '145'})
+          .search-room-page__card
+            +room-card({roomNumber: '840', images: [require('../../../assets/img/room840.png'), require('../../../assets/img/room840.png'), require('../../../assets/img/room840.png'), require('../../../assets/img/room840.png')], price: '9&nbsp;900', rating: 4, reviewsNumber: '65'})
+          .search-room-page__card
+            +room-card({roomNumber: '980', images: [require('../../../assets/img/room980.png'), require('../../../assets/img/room980.png'), require('../../../assets/img/room980.png'), require('../../../assets/img/room980.png')], type: 'люкс', price: '8&nbsp;500', rating: 3, reviewsNumber: '35'})
+          .search-room-page__card
+            +room-card({roomNumber: '856', images: [require('../../../assets/img/room856.png'), require('../../../assets/img/room856.png'), require('../../../assets/img/room856.png'), require('../../../assets/img/room856.png')], price: '7&nbsp;300', rating: 5, reviewsNumber: '19'})
+          .search-room-page__card
+            +room-card({roomNumber: '740', images: [require('../../../assets/img/room740.png'), require('../../../assets/img/room740.png'), require('../../../assets/img/room740.png'), require('../../../assets/img/room740.png')], price: '6&nbsp;000', rating: 4, reviewsNumber: '44'})
+          .search-room-page__card
+            +room-card({roomNumber: '982', images: [require('../../../assets/img/room982.png'), require('../../../assets/img/room982.png'), require('../../../assets/img/room982.png'), require('../../../assets/img/room982.png')], price: '5&nbsp;800', rating: 3, reviewsNumber: '56'})
+          .search-room-page__card
+            +room-card({roomNumber: '678', images: [require('../../../assets/img/room678.png'), require('../../../assets/img/room678.png'), require('../../../assets/img/room678.png'), require('../../../assets/img/room678.png')], price: '5&nbsp;500', rating: 5, reviewsNumber: '45'})
+          .search-room-page__card
+            +room-card({roomNumber: '450', images: [require('../../../assets/img/room450.png'), require('../../../assets/img/room450.png'), require('../../../assets/img/room450.png'), require('../../../assets/img/room450.png')], price: '5&nbsp;300', rating: 4, reviewsNumber: '39'})
+          .search-room-page__card
+            +room-card({roomNumber: '350', images: [require('../../../assets/img/room350.png'), require('../../../assets/img/room350.png'), require('../../../assets/img/room350.png'), require('../../../assets/img/room350.png')], price: '5&nbsp;000', rating: 3, reviewsNumber: '77'})
+          .search-room-page__card
+            +room-card({roomNumber: '666', images: [require('../../../assets/img/room666.png'), require('../../../assets/img/room666.png'), require('../../../assets/img/room666.png'), require('../../../assets/img/room666.png')], price: '5&nbsp;000', rating: 5, reviewsNumber: '25'})
+          .search-room-page__card
+            +room-card({roomNumber: '444', images: [require('../../../assets/img/room444.png'), require('../../../assets/img/room444.png'), require('../../../assets/img/room444.png'), require('../../../assets/img/room444.png')], price: '5&nbsp;000', rating: 3, reviewsNumber: '15'})
+          .search-room-page__card
+            +room-card({roomNumber: '352', images: [require('../../../assets/img/room352.png'), require('../../../assets/img/room352.png'), require('../../../assets/img/room352.png'), require('../../../assets/img/room352.png')], price: '5&nbsp;000', rating: 3, reviewsNumber: '55'})
+        .search-room-page__pagination
+          +pagination()
