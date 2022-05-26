@@ -1,0 +1,50 @@
+.donut-chart {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+
+  &__title {
+    font-size: 1.9rem;
+    font-weight: bold;
+    line-height: 2.4rem;
+    width: 100%;
+  }
+
+  &__chart {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    flex: 0 0 auto;
+    margin-top: 2.1rem;
+  }
+
+  &__chart-area {
+    position: absolute;
+    width: 16rem;
+    height: 16rem;
+    top: -2rem;
+    left: -2rem;
+  }
+
+  &__legend {
+    list-style: none;
+    margin: 0;
+    padding-left: 3rem;
+    margin-top: 5rem;
+  }
+
+  &__legend-label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__label-icon {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+  }
+
+  &__label-text {
+    margin-left: 0.5rem;
+  }
+}

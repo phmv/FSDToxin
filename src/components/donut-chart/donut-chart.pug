@@ -1,0 +1,9 @@
+mixin donut-chart(title = 'Круговая диаграмма')
+  figure.donut-chart
+    figcaption.donut-chart__title!= title
+    .donut-chart__chart
+      .donut-chart__center
+
+      .donut-chart__chart-area
+        canvas#votes-chart
+    ul.donut-chart__legend
