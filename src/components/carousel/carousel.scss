@@ -4,6 +4,7 @@
   width: 100%;
   line-height: 0;
   z-index: 1;
+  overflow: hidden;
 
   &:hover {
     .carousel__arrow {
@@ -24,6 +25,7 @@
     opacity: 0;
     color: #ffffff;
     transition: all 0.2s ease-out;
+    cursor: pointer;
 
     &::before {
       content: "expand_more";
