@@ -3,7 +3,7 @@ include ../toxin-icon/toxin-icon
 //- Using example: +toxin-logo()
 
 mixin toxin-logo()
-  .toxin-logo
+  a.toxin-logo(href='./index.html')
     .toxin-logo__icon
       +toxin-icon({size: 'small', isColorful: true})
     svg.toxin-logo__text(viewBox="0 0 54 14", fill="none", xmlns="http://www.w3.org/2000/svg")
