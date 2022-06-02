@@ -1,0 +1,48 @@
+extends ../../../templates/website-page/website-page
+include ../../../components/carousel/carousel
+include ../../../components/features-list/features-list
+include ../../../components/guest-review/guest-review
+include ../../../components/bullet-list/bullet-list
+include ../../../components/donut-chart/donut-chart
+
+block variables
+  - let title = 'Room details'
+
+block main
+  - var images = [require('../../../assets/img/room888.png'), require('../../../assets/img/room888_2.png'), require('../../../assets/img/room888_3.png')]
+  .room-details-page
+    section.room-details-page__gallery
+      .room-details-page__gallery-section
+        figure.room-details-page__gallery-image-container
+          img.room-details-page__gallery-image(src=images[0], alt="Основная спальная комната")
+      .room-details-page__gallery-section.room-details-page__gallery-section--narrow
+        figure.room-details-page__gallery-image-container
+          img.room-details-page__gallery-image(src=images[1], alt="Малая спальная комната")
+        figure.room-details-page__gallery-image-container
+          img.room-details-page__gallery-image(src=images[2], alt="Основная спальная комната")
+      .room-details-page__gallery-carousel
+        +carousel(images)
+    .room-details-page__wrapper
+      section.room-details-page__info-section
+        h2.room-details-page__section-title Сведения о номере
+        .room-details-page__section-content
+          +features-list([{icon: 'insert_emoticon', title: 'Комфорт', desc: 'Шумопоглащающие стены'}, {icon: 'location_city', title: 'Удобство', desc: 'Окно в каждой из спален'}, {icon: 'whatshot', title: 'Уют', desc: 'Номер оснащен камином', noBorder: true}])
+      .room-details-page__info-section
+        +donut-chart('Впечатления от номера')
+      section.room-details-page__info-section.room-details-page__info-section--with-description
+        h2.room-details-page__section-title Отзывы посетителей номера
+        .room-details-page__section-description 2 отзыва
+        .room-details-page__section-content
+          .room-details-page__guest-review
+            +guest-review({avatar: require('../../../assets/img/murad-ava.png'), guestName: 'Мурад Сарафанов', date: '5 дней назад', likes: 11, text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
+          .room-details-page__guest-review
+            +guest-review({avatar: require('../../../assets/img/patricia-ava.png'), guestName: 'Патрисия Стёклышккова', date: 'Неделю назад', likes: 2, text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
+      section.room-details-page__info-section
+        h2.room-details-page__section-title.room-details-page__section-title--spaced Правила
+        .room-details-page__section-content
+          +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, <span class="nowrap">а выезд</span> до 12:00'])
+      section.room-details-page__info-section
+        h2.room-details-page__section-title Отмена
+        p.room-details-page__section-content Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      .room-details-page__booking-form
+        include ../../../forms/room-booking-card/room-booking-card
