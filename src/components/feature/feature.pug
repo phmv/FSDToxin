@@ -1,8 +1,10 @@
-//- Using example: +feature({icon: 'material_icon-name', title: 'Feature title', desc: 'Feature description'})
+//- Using example: +feature({icon: 'material_icon-name', title: 'Feature title', desc: 'Feature description', noBorder: true (optional)})
 
 mixin feature(params)
-
-  .feature
+  - var noBorderClass = ''
+  if params.noBorder
+    - noBorderClass = 'feature--no-border'
+  .feature(class=noBorderClass)
     .feature__logo
       i.material-icons.feature__icon!= params.icon
     .feature__info

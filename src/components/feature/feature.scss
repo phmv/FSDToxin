@@ -13,8 +13,8 @@
   &__icon {
     color: #bc9cff;
     font-size: 4.8rem;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    background: -moz-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background: -moz-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     -moz-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -27,12 +27,17 @@
   }
 
   &__title,
-  &__desc{
+  &__desc {
     margin: 0;
     font-size: 1.4rem;
   }
 
   &__title {
     font-weight: bold;
+  }
+
+  &--no-border {
+    border: none;
+    padding: 0;
   }
 }
