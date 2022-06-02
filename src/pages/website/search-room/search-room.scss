@@ -50,6 +50,13 @@
     }
   }
 
+  &__filters-submit {
+    .submit-button {
+      &::after {
+        display: none;
+      }
+    }
+  }
   &__results {
     max-width: 83.4rem;
     flex: 1 1 auto;
@@ -254,10 +261,6 @@
         color: #bc9cff;
         justify-content: flex-start;
         padding: 0;
-
-        &::after {
-          display: none;
-        }
       }
     }
   }

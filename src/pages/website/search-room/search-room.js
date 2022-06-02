@@ -15,6 +15,7 @@ window.addEventListener("load", (e) => {
   let filtersSubmit = filters.querySelector(".search-room-page__filters-submit");
   let isFiltersActive = false;
   let isSubmitActive = false;
+  let isOnChangeEnabled = false; //to prevent form onChange event firing when inputs change on page load
 
   if (window.innerWidth <= 768) {
     filters.style.maxHeight = `calc(100vh - ${filters.getBoundingClientRect().top}px)`;
@@ -37,6 +38,7 @@ window.addEventListener("load", (e) => {
   filtersButton.addEventListener("click", filtersButtonClickEventHandler);
   document.addEventListener("click", outOfFiltersClickHandler);
   form.addEventListener("change", formChangeEventHandler);
+  form.addEventListener("mousedown", formOnChangeEnable, { once: true });
   document.addEventListener("click", outOfSubmitClickHandler);
 
   function filtersButtonClickEventHandler() {
@@ -54,7 +56,7 @@ window.addEventListener("load", (e) => {
   }
 
   function formChangeEventHandler(e) {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 768 && isOnChangeEnabled) {
       let target = e.target.className.includes("checkbox") ? e.target.parentElement : e.target;
       let promise = new Promise((resolve, reject) => {
         setTimeout(() => resolve(215), 10);
@@ -62,6 +64,10 @@ window.addEventListener("load", (e) => {
 
       promise.then((result) => showSubmit(target));
     }
+  }
+
+  function formOnChangeEnable(e) {
+    isOnChangeEnabled = true;
   }
 
   function outOfSubmitClickHandler(e) {
@@ -89,12 +95,10 @@ window.addEventListener("load", (e) => {
     filtersSubmit.style.left = targetRect.x + targetRect.width + "px";
     filtersSubmit.classList.add("search-room-page__filters-submit--active");
     isSubmitActive = true;
-    console.log("showed");
   }
 
   function hideSubmit() {
     if (isSubmitActive) {
-      console.log("hided");
       filtersSubmit.classList.remove("search-room-page__filters-submit--active");
       filtersSubmit.removeAttribute("style");
       isSubmitActive = false;
