@@ -1,21 +1,57 @@
 .donut-chart {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 0;
 
   &__title {
     font-size: 1.9rem;
     font-weight: bold;
     line-height: 2.4rem;
+    color: #1f2041;
     width: 100%;
+    margin-bottom: 2.1rem;
   }
 
   &__chart {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 12rem;
     height: 12rem;
     flex: 0 0 auto;
-    margin-top: 2.1rem;
+    margin-right: 3rem;
+  }
+
+  &__middle {
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #bc9cff;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.3s ease-in, opacity 0.3s ease-in;
+
+    &--hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__votes-number {
+    font-size: 2.4rem;
+    line-height: 2.7rem;
+    vertical-align: top;
+  }
+
+  &__votes-text {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin-top: 0.15rem;
+    text-transform: uppercase;
   }
 
   &__chart-area {
@@ -29,8 +65,8 @@
   &__legend {
     list-style: none;
     margin: 0;
-    padding-left: 3rem;
-    margin-top: 5rem;
+    margin-top: 2.9rem;
+    padding: 0;
   }
 
   &__legend-label {
@@ -46,5 +82,11 @@
 
   &__label-text {
     margin-left: 0.5rem;
+  }
+
+  @media screen and (max-width: 690px) {
+    &__title {
+      text-align: center;
+    }
   }
 }
