@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#a980ff">
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <title>Cards</title>
+  <link href="assets/css/common.css" rel="stylesheet"><link href="assets/css/cards.css" rel="stylesheet"></head>
+  <body class="uikit-page uikit-page--dark-bg">
+    <div class="uikit-page__logo">
+      <div class="toxin-icon">
+        <div class="toxin-icon__container">
+          <svg class="toxin-icon__part toxin-icon__circle" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+            <defs>
+              <linearGradient id="primary-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#bc9cff"></stop>
+                <stop offset="100%" stop-color="#8ba4f9"></stop>
+              </linearGradient>
+              <linearGradient id="secondary-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#6fcf97"></stop>
+                <stop offset="100%" stop-color="#66d2ea"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z"></path>
+          </svg>
+          <svg class="toxin-icon__part toxin-icon__left-curve" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+            <defs>
+              <linearGradient id="primary-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#bc9cff"></stop>
+                <stop offset="100%" stop-color="#8ba4f9"></stop>
+              </linearGradient>
+              <linearGradient id="secondary-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#6fcf97"></stop>
+                <stop offset="100%" stop-color="#66d2ea"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M12.9989 14.4712C12.2224 14.4712 11.5871 13.8359 11.5871 13.0594C11.5871 7.6241 7.14003 3.17705 1.70473 3.17705C0.928263 3.17705 0.292969 2.54175 0.292969 1.76528C0.292969 0.98881 0.928263 0.353516 1.70473 0.353516C8.72826 0.353516 14.4106 6.03587 14.4106 13.0594C14.4106 13.8359 13.7753 14.4712 12.9989 14.4712Z"></path>
+          </svg>
+          <svg class="toxin-icon__part toxin-icon__right-curve" viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+            <defs>
+              <linearGradient id="primary-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#bc9cff"></stop>
+                <stop offset="100%" stop-color="#8ba4f9"></stop>
+              </linearGradient>
+              <linearGradient id="secondary-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#6fcf97"></stop>
+                <stop offset="100%" stop-color="#66d2ea"></stop>
+              </linearGradient>
+            </defs>
+            <path d="M11.7068 1.76528C11.7068 2.54175 11.0715 3.17704 10.295 3.17704C6.9421 3.17704 3.9421 4.87116 2.17739 7.44763C1.78915 6.4594 1.33033 5.54175 0.765625 4.69469C3.09504 2.01234 6.51857 0.353516 10.295 0.353516C11.0715 0.353516 11.7068 0.98881 11.7068 1.76528Z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <main class="uikit-page__main">
+      <div class="cards">
+        <div class="cards__group">
+          <div class="cards__card">
+            <form class="form-card" action="URL" name="sch-room-form">
+              <h1 class="form-card__title">Найдём номера под ваши пожелания</h1>
+              <div class="form-card__section">
+                            <div class="dates-block">
+                              <div class="dates-block__date">
+                                            <div class="input-container input-container--static">
+                                              <label class="input-container__label" for="sch-room-form__dates-checkin">Прибытие</label>
+                                              <div class="input-container__input">
+                                                            <label class="dropdown dropdown--separated-date" title="Выберите даты">
+                                                                          <input class="text-field text-field--right-space text-field--dropdown" type="text" id="sch-room-form__dates-checkin" name="sch-room-form__dates-checkin" placeholder="ДД.ММ.ГГГГ" readonly required autocomplete="off">
+                                                            </label>
+                                              </div>
+                                            </div>
+                              </div>
+                              <div class="dates-block__date">
+                                            <div class="input-container">
+                                              <label class="input-container__label" for="sch-room-form__dates-checkout">Выезд</label>
+                                              <div class="input-container__input">
+                                                            <label class="dropdown">
+                                                                          <input class="text-field text-field--right-space text-field--dropdown" type="text" id="sch-room-form__dates-checkout" name="sch-room-form__dates-checkout" placeholder="ДД.ММ.ГГГГ" readonly required autocomplete="off">
+                                                            </label>
+                                              </div>
+                                            </div>
+                              </div>
+                            </div>
+              </div>
+              <div class="form-card__section">
+                            <div class="input-container">
+                              <label class="input-container__label" for="sch-room-form__guests">Гости</label>
+                              <div class="input-container__input">
+                                            <label class="dropdown dropdown--guests" title="Введите количество гостей">
+                                                          <input class="text-field text-field--right-space text-field--dropdown" type="text" id="sch-room-forn__guests" name="sch-room-form__guests" placeholder="Сколько гостей" readonly required autocomplete="off">
+                                            </label>
+                              </div>
+                            </div>
+              </div>
+              <div class="form-card__footer">
+                            <button class="submit-button" type="submit">Подобрать номер</button>
+              </div>
+            </form>
+          </div>
+          <div class="cards__card">
+            <form class="form-card" action="URL" name="sign-up-form">
+              <h1 class="form-card__title">Регистрация аккаунта</h1>
+              <div class="form-card__section">
+                <div class="form-card__field">
+                              <input class="text-field" type="text" id="sign-up-form__name" name="name" placeholder="Имя" required autocomplete>
+                </div>
+                <div class="form-card__field">
+                              <input class="text-field" type="text" id="sign-up-form__surname" name="surname" placeholder="Фамилия" required autocomplete>
+                </div>
+                <div class="form-card__field">
+                              <div class="gender-pick">
+                                <div class="gender-pick__el">
+                                              <label class="radio-button">
+                                                <input class="radio-button__input" id="sign-up-form__genderpick-male" type="radio" name="sign-up-form__genderpick" value="male"><span class="radio-button__box"></span><span class="radio-button__label">Мужчина</span>
+                                              </label>
+                                </div>
+                                <div class="gender-pick__el">
+                                              <label class="radio-button">
+                                                <input class="radio-button__input" id="sign-up-form__genderpick-female" type="radio" name="sign-up-form__genderpick" value="female"><span class="radio-button__box"></span><span class="radio-button__label">Женщина</span>
+                                              </label>
+                                </div>
+                              </div>
+                </div>
+              </div>
+              <div class="form-card__section">
+                            <div class="input-container">
+                              <label class="input-container__label" for="sign-up-form__birthday">Дата рождения</label>
+                              <div class="input-container__input">
+                                            <input class="text-field birthday-mask" type="text" id="sign-up-form__birthday" name="birthday" placeholder="ДД.ММ.ГГГГ" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" required autocomplete>
+                              </div>
+                            </div>
+              </div>
+              <div class="form-card__section">
+                <div class="form-card__field">
+                              <div class="input-container">
+                                <label class="input-container__label" for="sign-up-form__email">Данные для входа в сервис</label>
+                                <div class="input-container__input">
+                                              <input class="text-field" type="email" id="sign-up-form__email" name="email" placeholder="Email" required autocomplete>
+                                </div>
+                              </div>
+                </div>
+                <div class="form-card__field">
+                              <input class="text-field" type="password" id="sign-up-form__password" name="password" placeholder="Пароль" required>
+                </div>
+                <div class="form-card__field">
+                              <label class="toggle-button">
+                                <input class="toggle-button__input" id="sign-up-form__offers" type="checkbox" name="special-offers"><span class="toggle-button__toggle"></span><span class="toggle-button__label">Получать спецпредложения</span>
+                              </label>
+                </div>
+              </div>
+              <div class="form-card__submit">
+                            <button class="submit-button" type="submit">Зарегистрироваться</button>
+              </div>
+              <div class="form-card__footer">
+                <p class="form-card__redirect-label">Уже есть аккаунт на Toxin</p>
+                <div class="form-card__redirect-button"><a class="link-button link-button--theme--secondary" href="javascript:void(0)"><span class="link-button__text">Войти</span></a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="cards__group">
+          <div class="cards__card">
+            <form class="form-card" action="URL" name="room-booking-card">
+              <div class="room-booking-card">
+                <div class="room-booking-card__top">
+                  <div class="room-booking-card__room"><span class="room-booking-card__nsymb">№&nbsp;</span><span class="room-booking-card__number">888</span><span class="room-booking-card__type">люкс</span></div>
+                  <div class="room-booking-card__price"><span class="room-booking-card__value">9&nbsp;990₽&nbsp;</span><span class="room-booking-card__period">в сутки</span></div>
+                </div>
+                <div class="form-card__section">
+                              <div class="dates-block">
+                                <div class="dates-block__date">
+                                              <div class="input-container input-container--static">
+                                                <label class="input-container__label" for="booking-card-dates-checkin">Прибытие</label>
+                                                <div class="input-container__input">
+                                                              <label class="dropdown dropdown--separated-date" title="Выберите даты">
+                                                                            <input class="text-field text-field--right-space text-field--dropdown" type="text" id="booking-card-dates-checkin" name="booking-card-dates-checkin" placeholder="ДД.ММ.ГГГГ" readonly required autocomplete="off">
+                                                              </label>
+                                                </div>
+                                              </div>
+                                </div>
+                                <div class="dates-block__date">
+                                              <div class="input-container">
+                                                <label class="input-container__label" for="booking-card-dates-checkout">Выезд</label>
+                                                <div class="input-container__input">
+                                                              <label class="dropdown">
+                                                                            <input class="text-field text-field--right-space text-field--dropdown" type="text" id="booking-card-dates-checkout" name="booking-card-dates-checkout" placeholder="ДД.ММ.ГГГГ" readonly required autocomplete="off">
+                                                              </label>
+                                                </div>
+                                              </div>
+                                </div>
+                              </div>
+                </div>
+                <div class="form-card__section">
+                              <div class="input-container">
+                                <label class="input-container__label" for="booking-card-guests">Гости</label>
+                                <div class="input-container__input">
+                                              <label class="dropdown dropdown--guests" title="Введите количество гостей">
+                                                            <input class="text-field text-field--right-space text-field--dropdown" type="text" id="booking-card-guests" name="booking-card-guests" placeholder="Сколько гостей" readonly required autocomplete="off">
+                                              </label>
+                                </div>
+                              </div>
+                </div>
+                <div class="form-card__section">
+                  <ul class="room-booking-card__pricing">
+                    <li class="room-booking-card__pricing-item">
+                      <p class="room-booking-card__pricing-desc">9 990₽ х 4 суток</p>
+                      <p class="room-booking-card__pricing-cost">39 960₽</p>
+                    </li>
+                    <li class="room-booking-card__pricing-item">
+                      <p class="room-booking-card__pricing-desc">Сбор за услуги: скидка&nbsp;<span class="nowrap">2 179₽</span></p><span class="room-booking-card__pricing-info">i</span>
+                      <p class="room-booking-card__pricing-cost">0₽</p>
+                    </li>
+                    <li class="room-booking-card__pricing-item">
+                      <p class="room-booking-card__pricing-desc">Сбор за дополнительные услуги</p><span class="room-booking-card__pricing-info">i</span>
+                      <p class="room-booking-card__pricing-cost">300₽</p>
+                    </li>
+                  </ul>
+                  <p class="room-booking-card__total"><span class="room-booking-card__total-desc">Итого</span><span class="room-booking-card__total-dash"></span><span class="room-booking-card__total-cost">38 081₽</span></p>
+                </div>
+                <div class="form-card__submit">
+                              <button class="submit-button" type="submit">Забронировать</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="cards__card">
+            <form class="form-card" action="URL" name="sign-in-form">
+              <h1 class="form-card__title">Войти</h1>
+              <div class="form-card__field">
+                            <input class="text-field" type="email" id="sign-in-form__email" name="email" placeholder="Email" required autocomplete>
+              </div>
+              <div class="form-card__field">
+                            <input class="text-field" type="password" id="sign-in-form__password" name="password" placeholder="Пароль" required>
+              </div>
+              <div class="form-card__submit">
+                            <button class="submit-button" type="submit">Войти</button>
+              </div>
+              <div class="form-card__footer">
+                <p class="form-card__redirect-label">Нет аккаунта на Toxin?</p>
+                <div class="form-card__redirect-button"><a class="link-button link-button--theme--secondary" href="javascript:void(0)"><span class="link-button__text">Создать</span></a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="cards__group">
+          <div class="cards__card cards__card--lastgroup">
+            <div class="datepicker-here"></div>
+          </div>
+          <div class="cards__card cards__card--lastgroup">
+            <div class="cards__card--room">
+              <article class="room-card">
+                <div class="room-card__gallery">
+                  <div class="carousel">
+                    <ul class="carousel__gallery">
+                      <li class="carousel__image"><img src="./assets/img/room888.png"></li>
+                      <li class="carousel__image"><img src="./assets/img/room840.png"></li>
+                      <li class="carousel__image"><img src="./assets/img/room888.png"></li>
+                      <li class="carousel__image"><img src="./assets/img/room840.png"></li>
+                    </ul>
+                  </div>
+                </div><a class="room-card__body" href="./room-details.html">
+                  <div class="room-card__title">
+                    <div class="room-card__room"><span class="room-card__nsymb">№&nbsp;</span><span class="room-card__number">888</span><span class="room-card__type">люкс</span>
+                    </div>
+                    <div class="room-card__price"><span class="room-card__value">9&nbsp;990₽&nbsp;</span><span class="room-card__period">в сутки</span></div>
+                  </div>
+                  <div class="room-card__reviews">
+                    <div class="room-card__rating">
+                      <div class="star-rating"><span class="star-rating__star">star</span><span class="star-rating__star">star</span><span class="star-rating__star">star</span><span class="star-rating__star">star</span><span class="star-rating__star">star</span>
+                      </div>
+                    </div>
+                    <div class="room-card__reviews-counter"><span class="room-card__reviews-number">145</span><span>&nbsp;Отзывов</span></div>
+                  </div></a>
+              </article>
+            </div>
+          </div>
+          <div class="cards__card cards__card--lastgroup">
+            <div class="cards__card--room">
+              <article class="room-card">
+                <div class="room-card__gallery">
+                  <div class="carousel">
+                    <ul class="carousel__gallery">
+                      <li class="carousel__image"><img src="./assets/img/room840.png"></li>
+                    </ul>
+                  </div>
+                </div><a class="room-card__body" href="./room-details.html">
+                  <div class="room-card__title">
+                    <div class="room-card__room"><span class="room-card__nsymb">№&nbsp;</span><span class="room-card__number">840</span>
+                    </div>
+                    <div class="room-card__price"><span class="room-card__value">9&nbsp;900₽&nbsp;</span><span class="room-card__period">в сутки</span></div>
+                  </div>
+                  <div class="room-card__reviews">
+                    <div class="room-card__rating">
+                      <div class="star-rating"><span class="star-rating__star">star</span><span class="star-rating__star">star</span><span class="star-rating__star">star</span><span class="star-rating__star">star</span><span class="star-rating__star">star_border</span>
+                      </div>
+                    </div>
+                    <div class="room-card__reviews-counter"><span class="room-card__reviews-number">65</span><span>&nbsp;Отзывов</span></div>
+                  </div></a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  <script type="text/javascript" src="assets/js/common.js"></script><script type="text/javascript" src="assets/js/cards.js"></script></body>
+</html>
