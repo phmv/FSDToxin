@@ -24,11 +24,4 @@ mixin toxin-icon__part(params)
         - classes.push(classBase + '__right-curve--special')
 
   svg(class=classes, viewBox=viewBox, xmlns='http://www.w3.org/2000/svg', preserveAspectRatio='xMinYMin meet')
-      defs
-        linearGradient(id='primary-gradient', x1='0', y1='0', x2='0', y2='1')
-          stop(offset='0%', stop-color='#bc9cff')
-          stop(offset='100%', stop-color='#8ba4f9')
-        linearGradient(id='secondary-gradient', x1='0', y1='0', x2='0', y2='1')
-          stop(offset='0%', stop-color='#6fcf97')
-          stop(offset='100%', stop-color='#66d2ea')
       path(d=path)
