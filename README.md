@@ -2,7 +2,7 @@
 
 ![Toxin hotel website](https://github.com/phmv/FSDToxin/blob/master/src/assets/img/ProjectPreview.png "Toxin hotel website") A frontend project created according to Metalamp Development team's training "Toxin" mockup.
 
-## Страницы ui kit
+## Ui-kit Pages
 
 [Colors & Type](https://phmv.github.io/FSDToxin/colors-and-type.html)
 
@@ -12,7 +12,7 @@
 
 [Headers & footers](https://phmv.github.io/FSDToxin/headers-and-footers.html)
 
-## Страницы сайта
+## Website pages
 
 [Landing](https://phmv.github.io/FSDToxin/index.html)
 
@@ -24,7 +24,7 @@
 
 [Register](https://phmv.github.io/FSDToxin/registration.html)
 
-## Технологии, библиотеки и плагины
+## Technologies, libraries and plugins
 
 - Node - 12.12.0
 - Npm - 6.11.3
@@ -37,16 +37,16 @@
 - [Item quantity dropdown](https://www.npmjs.com/package/item-quantity-dropdown) - 2.1.0
 - [Air Datepicker](http://t1m0n.name/air-datepicker/docs/)
 
-## Команды
+## Commands
 
-Команды могут осуществляться с помощью `npm` или `yarn` пакетных менеджеров:
+`npm` or `yarn` packet managers can be used to run following commands:
 
-Установка зависимостей - `npm i` или `yarn`
+Dependecies installing - `npm i` or `yarn`
 
-Запуск сервера для разработки - `npm run dev` или `yarn dev`
+Development server with live reload running - `npm run dev` or `yarn dev`
 
-> Сборка запускается на локальном сервере по адресу http://localhost:8080, храниться в браузере в дериктории `dist`
+> The bundle is running on the local server http://localhost:8080
 
-Сборка проекта - `npm run build` или `yarn build`
+Project building - `npm run build` or `yarn build`
 
-> Продакшн сборка производится с помощью `webpack`, сохраняется в папке `dist`
+> Built project is located in `dist` directory
