@@ -45,7 +45,7 @@ Dependecies installing - `npm i` or `yarn`
 
 Development server with live reload running - `npm run dev` or `yarn dev`
 
-> The bundle is running on the local server http://localhost:8080
+> The bundle is running on the local server http://localhost:8081
 
 Project building - `npm run build` or `yarn build`
 
