@@ -24,7 +24,7 @@
 
 [Register](https://phmv.github.io/FSDToxin/registration.html)
 
-## Technologies, libraries and plugins
+## Technologies, libraries and plugins used
 
 - Node - 12.12.0
 - Npm - 6.11.3
