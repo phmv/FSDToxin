@@ -11,16 +11,9 @@ mixin nav-menu(params)
   - var classes = []
   if params.isUserLoged
     - classes.push('nav-menu--user-loged')
-  nav.nav-menu(class=classes, data-active='false')
+  nav.nav-menu(class=classes, data-navopened="false", data-authopened="false")
     .nav-menu__content-cover
     ul.nav-menu__list
-      .nav-menu__authorization.nav-menu__authorization--mobile
-        .nav-menu__signing-button
-          +link-button({text: 'Войти', linkTo: './sign-in.html', theme: 'secondary', headerButton: true})
-        .nav-menu__signing-button
-          +link-button({text: 'Зарегистрироваться', linkTo: './registration.html', theme: 'primary', headerButton: true})
-        .nav-menu__profile
-          .nav-menu__username Константин Константинопольский
       each item in params.items
         - var itemClassList = ['nav-menu__item']
         if item.isImportant
@@ -42,6 +35,8 @@ mixin nav-menu(params)
         +link-button({text: 'Зарегистрироваться', linkTo: './registration.html', theme: 'primary', headerButton: true})
       .nav-menu__profile
         .nav-menu__username Константин Константинопольский
+    .nav-menu__auth-btn
+      i.nav-menu__auth-btn-icon.material-icons account_circle
     .nav-menu__burger
       .nav-menu__burger-line.nav-menu__burger-line--first
       .nav-menu__burger-line.nav-menu__burger-line--second

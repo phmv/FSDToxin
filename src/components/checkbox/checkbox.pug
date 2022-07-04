@@ -9,6 +9,6 @@ mixin checkbox(params)
   label(class=classes)
     input.checkbox__input(id=params.id, type='checkbox', name=params.name, checked= params.checked)
     span.checkbox__box
-    p.checkbox__label!= params.label
+    span.checkbox__label!= params.label
     if (params.desc)
-      p.checkbox__description!= params.desc
+      span.checkbox__description!= params.desc

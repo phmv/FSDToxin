@@ -4,27 +4,35 @@ import * as transition from "../../utils/transition-block/transition-blocker.js"
 
 document.querySelectorAll(".nav-menu").forEach((navMenu) => {
   let list = navMenu.querySelector(".nav-menu__list");
+  let authBlock = navMenu.querySelector(".nav-menu__authorization");
   let contentCover = navMenu.querySelector(".nav-menu__content-cover");
-  let burgerButton = navMenu.querySelector(".nav-menu__burger");
   let dropdowns = navMenu.querySelectorAll(".nav-menu__dropdown");
+  let authButton = navMenu.querySelector(".nav-menu__auth-btn");
+  let burgerButton = navMenu.querySelector(".nav-menu__burger");
+  let isAuthBlockOpened = false;
   let isNavMenuOpened = false;
 
+  authButton.addEventListener("click", authButtonClickHandler);
   burgerButton.addEventListener("click", burgerButtonClickHandler);
   document.addEventListener("click", outOfNavMenuClickHandler);
+  document.addEventListener("click", outOfAuthBlockClickHandler);
 
   window.addEventListener("blur", function () {
     isNavMenuOpened = false;
-    navMenu.dataset.active = false;
+    navMenu.dataset.navopened = false;
+    isAuthBlockOpened = false;
+    authBlock.dataset.active = false;
   });
 
   transition.block(list);
+  transition.block(authBlock);
   transition.block(contentCover);
 
   function burgerButtonClickHandler(e) {
     transition.once(contentCover);
     transition.once(list);
     isNavMenuOpened = !isNavMenuOpened;
-    navMenu.dataset.active = isNavMenuOpened;
+    navMenu.dataset.navopened = isNavMenuOpened;
   }
 
   function outOfNavMenuClickHandler(e) {
@@ -32,7 +40,21 @@ document.querySelectorAll(".nav-menu").forEach((navMenu) => {
       transition.once(contentCover);
       transition.once(list);
       isNavMenuOpened = false;
-      navMenu.dataset.active = isNavMenuOpened;
+      navMenu.dataset.navopened = isNavMenuOpened;
+    }
+  }
+
+  function authButtonClickHandler(e) {
+    transition.once(authBlock);
+    isAuthBlockOpened = !isAuthBlockOpened;
+    navMenu.dataset.authopened = isAuthBlockOpened;
+  }
+
+  function outOfAuthBlockClickHandler(e) {
+    if (!authBlock.contains(e.target) && !authButton.contains(e.target) && isAuthBlockOpened) {
+      transition.once(authBlock);
+      isAuthBlockOpened = false;
+      navMenu.dataset.authopened = isAuthBlockOpened;
     }
   }
 

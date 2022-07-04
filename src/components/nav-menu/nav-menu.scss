@@ -1,3 +1,4 @@
+@use "sass:color";
 .nav-menu {
   display: flex;
   flex-wrap: nowrap;
@@ -16,9 +17,6 @@
 
   &__authorization {
     display: flex;
-    &--mobile {
-      display: none;
-    }
   }
 
   &--user-loged &__signing-button {
@@ -106,7 +104,7 @@
     transition: opacity 0.1s ease-in, visibility 0.1s ease-in;
   }
 
-  &[data-active="false"] &__dropdown:hover &__dropdown-list {
+  &[data-navopened="false"] &__dropdown:hover &__dropdown-list {
     visibility: visible;
     opacity: 1;
   }
@@ -123,6 +121,18 @@
   &__link {
     text-decoration: none;
     white-space: nowrap;
+  }
+
+  &__auth-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: rgba(31, 32, 65, 0.3);
+    cursor: pointer;
+  }
+
+  &__auth-btn-icon {
+    font-size: 3rem;
   }
 
   &__burger {
@@ -163,10 +173,9 @@
       right: 0;
       top: 100%;
       height: calc(100vh - 100%);
-      overflow-y: scroll;
+      overflow-y: auto;
       padding: 0 2rem;
       background-color: #ffffff;
-      z-index: 1;
       opacity: 0;
       transition: all 0.1s ease-in;
     }
@@ -211,47 +220,92 @@
     &__burger {
       display: block;
     }
-    &[data-active="true"] &__content-cover {
+    &[data-navopened="true"] &__content-cover {
       visibility: visible;
       opacity: 0.2;
     }
 
-    &[data-active="true"] &__list {
+    &[data-navopened="true"] &__list {
       visibility: visible;
       opacity: 1;
+      z-index: 2;
     }
 
-    &[data-active="true"] &__burger-line {
-      background-color: rgba(31, 32, 65, 1);
+    &[data-navopened="true"] &__burger-line {
+      background-color: color.scale(#1f2041, $lightness: 35%, $saturation: -50%);
     }
 
-    &[data-active="true"] &__burger-line--first {
+    &[data-navopened="true"] &__burger-line--first {
       transform: translateY(0.7rem) rotate(45deg);
     }
 
-    &[data-active="true"] &__burger-line--second {
+    &[data-navopened="true"] &__burger-line--second {
       opacity: 0;
     }
 
-    &[data-active="true"] &__burger-line--third {
+    &[data-navopened="true"] &__burger-line--third {
       transform: translateY(-0.7rem) rotate(-45deg);
     }
   }
 
   @media screen and (max-width: 560px) {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      left: 0;
+      visibility: hidden;
+      opacity: 0;
+      height: calc(100vh - 100%);
+      background-color: #ffffff;
+      transition: all 0.1s ease-in;
+      z-index: -1;
+    }
+
     &__content-cover {
       display: none;
     }
 
     &__list {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__item {
+      text-align: center;
+    }
+
+    &__dropdown-title {
+      margin-left: 1.2rem;
+    }
+
+    &__dropdown-list {
+      border-left: none;
+      padding-left: 0;
     }
 
     &__authorization {
-      display: none;
-      &--mobile {
-        display: block;
-      }
+      position: absolute;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      height: calc(100vh - 100%);
+      padding: 0 2rem;
+      background-color: #ffffff;
+      z-index: 1;
+      transition: all 0.1s ease-in;
     }
 
     &__signing-button,
@@ -262,8 +316,29 @@
 
     &__signing-button {
       max-width: 20rem;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 1rem auto;
+      width: 100%;
+    }
+
+    &__auth-btn {
+      display: flex;
+      transition: all 0.1s ease-in;
+    }
+
+    &[data-authopened="true"] &__authorization {
+      visibility: visible;
+      opacity: 1;
+      z-index: 2;
+    }
+
+    &[data-authopened="true"] &__auth-btn {
+      color: color.scale(#1f2041, $lightness: 35%, $saturation: -50%);
+    }
+
+    &[data-authopened="true"]::after,
+    &[data-navopened="true"]::after {
+      visibility: visible;
+      opacity: 1;
     }
   }
 }

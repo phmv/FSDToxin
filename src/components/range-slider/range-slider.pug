@@ -9,9 +9,9 @@ mixin range-slider(params)
     .range-slider__top
       .range-slider__title!= params.title
       .range-slider__output-container
-        output.range-slider__output-low(for=params.id +'-hidden', value=firstValue)!= firstValue
+        output.range-slider__output-low(for=params.id +'-hidden')!= firstValue
         span!= params.currency + ' - '
-        output.range-slider__output-high(for=params.id +'-top', value=secondValue)!= secondValue
+        output.range-slider__output-high(for=params.id +'-top')!= secondValue
         span!= params.currency
     .range-slider__slider
       input.range-slider__input-hidden(type='range', id=params.id + '-hidden', name=params.name + '-lowVal', step=params.step, min=params.min, max=params.max, value=firstValue)
