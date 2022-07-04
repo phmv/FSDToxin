@@ -18,5 +18,5 @@ mixin text-field(params)
     when 'birthday-mask'
       - fieldPattern = '(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}'
 
-  input(type=type, class=classes, id=params.id, name=params.name, placeholder=params.placeholder, value=params.value, pattern=fieldPattern, readonly=params.ro, required=params.rq, autocomplete=params.autocomplete)
+  input(type=type, class=classes, id=params.id, name=params.name, placeholder=params.placeholder, value=params.value, pattern=fieldPattern, readonly=params.ro, required=params.rq, autocomplete=params.autocomplete ? 'on' : 'off')
 
