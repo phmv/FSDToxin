@@ -24,5 +24,5 @@ mixin dropdown(params)
       - classes.push(baseClass + '--guests')
       - title = 'Введите количество гостей'
       - placeholder = 'Сколько гостей'
-  label(class=classes, title=title)
+  div(class=classes)
     +text-field({id: params.id, name: params.name, placeholder: placeholder, rightSpace: true, ro: true, rq: true, autocomplete: "off", dropdown: true})
