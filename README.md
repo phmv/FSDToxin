@@ -1,6 +1,8 @@
 # FSDToxin
 
-![Toxin hotel website](https://github.com/phmv/FSDToxin/blob/master/src/assets/img/ProjectPreview.jpg("Toxin hotel website") A frontend project created according to Metalamp Development team's training ["Toxin" mockup](<https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=0%3A1>).
+![Toxin hotel website](https://github.com/phmv/FSDToxin/blob/master/src/assets/img/ProjectPreview.jpg)
+
+A frontend project created according to Metalamp Development team's training ["Toxin" mockup](<https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=0%3A1>).
 
 ## Ui-kit Pages
 
